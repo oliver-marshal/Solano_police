@@ -126,7 +126,7 @@ function goHome(){document.querySelectorAll('.page').forEach(p=>p.style.display=
 function openAdmin(){
  let pass = prompt('🔒 لوحة تحكم OLIVER MARSHAL\nأدخل كلمة السر:');
  if(pass === null) return;
- if(pass === 'OLIVER2026'){
+ if(btoa(pass) === 'T0xJVkVSMjAyNg=='){
   document.getElementById('home').style.display='none';
   document.querySelectorAll('.page').forEach(p=>p.style.display='none');
   document.getElementById('admin').style.display='block';
