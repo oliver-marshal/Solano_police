@@ -57,7 +57,6 @@ body{font-family:'Cairo',sans-serif;background:#060a1c;color:#fff;min-height:100
 <div id="admin" class="page">
 <button class="back" onclick="goHome()">← رجوع</button>
 <h2>⚙️ لوحة تحكم OLIVER MARSHAL</h2>
-<p style="font-size:11px;color:#ff4d4d;margin:6px 0 16px">🔐 محمي بكلمة سر - فقط لك</p>
 <div class="admin-card"><div class="small">قائد الفصيل</div><input id="inLeader" class="input"></div>
 <div class="admin-card"><div class="small">النائب الأول</div><input id="inDeputy1" class="input"><div class="small" style="margin-top:10px">النائب الثاني</div><input id="inDeputy2" class="input"></div>
 <div class="admin-card"><div class="small">اسمك</div><input id="inOwner" class="input"></div>
@@ -132,7 +131,7 @@ function openAdmin(){
   document.querySelectorAll('.page').forEach(p=>p.style.display='none');
   document.getElementById('admin').style.display='block';
  } else {
-  alert('❌ كلمة السر خطأ!\nالكلمة الصحيحة: OLIVER2026');
+  alert('❌ كلمة السر خطأ!');
  }
 }
 load();
