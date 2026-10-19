@@ -10,29 +10,24 @@
 body{font-family:'Cairo',sans-serif;background:#060a1c;color:#fff;min-height:100vh}
 .bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(700px 500px at 5% 10%, #1230a0aa, transparent),radial-gradient(600px 400px at 95% 70%, #8a0f1f88, transparent),linear-gradient(180deg,#070b1e,#040612)}
 .header{height:60px;background:rgba(10,16,37,.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:sticky;top:0;z-index:20}
-.star{width:46px;height:46px;border-radius:14px;background:radial-gradient(100% 100% at 30% 20%, #1f3a8a, #0a1025);border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;box-shadow:0 0 30px rgba(45,107,255,.4)}
+.star{width:46px;height:46px;border-radius:14px;background:radial-gradient(100% 100% at 30% 20%, #1f3a8a, #0a1025);border:1px solid rgba(255,255,255,.12);display:grid;place-items:center}
 .pill{display:flex;align-items:center;gap:10px;background:rgba(15,20,42,.9);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:11px 24px;font-size:10px;letter-spacing:2px;color:#9fb0d1;margin:26px auto;width:fit-content}
-.dot{width:8px;height:8px;background:#22ff7a;border-radius:50%;box-shadow:0 0 12px #22ff7a}
+.dot{width:8px;height:8px;background:#22ff7a;border-radius:50%}
 .center{text-align:center;padding:10px 16px}
 .badge-wrap{position:relative;margin:18px auto;width:300px;height:300px;display:grid;place-items:center}
 .badge-bar{position:absolute;top:50%;left:0;right:0;height:70px;background:linear-gradient(90deg,#0e2060 0%, #4a0e18 100%);border-radius:40px;transform:translateY(-50%)}
 .shield{width:190px;height:240px;background:radial-gradient(120% 120% at 30% 20%, #1a2b5a, #070b1e);clip-path:polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%);border:1px solid rgba(255,255,255,.18);display:grid;place-items:center}
 .big-title{font-size:46px;font-weight:900;line-height:.9;background:linear-gradient(90deg,#3a5bff 0%, #8a8fa8 45%, #ff2a2a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.sub-title{font-size:11px;letter-spacing:5px;color:#6d7a9a;margin-top:14px}
 .cards{padding:16px;display:flex;flex-direction:column;gap:14px;max-width:480px;margin:0 auto 30px}
 .card{background:linear-gradient(180deg, rgba(18,28,62,.9), rgba(10,16,34,.9));border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:20px 22px}
 .card .small{font-size:11px;color:#7c89aa}
 .card .name{font-size:19px;font-weight:800;margin-top:8px}
 .owner-tag{display:inline-flex;margin-top:8px;background:#2d6bff22;border:1px solid #2d6bff33;color:#5b8cff;padding:4px 10px;border-radius:99px;font-size:10px;font-weight:700}
-.g-title{font-size:34px;font-weight:900;text-align:center;margin-top:10px}
-.g-sub{font-size:12px;color:#6d7a9a;text-align:center;margin:6px 0 18px}
-.dept{border-radius:24px;padding:22px;cursor:pointer}
-.admin-btn{margin:20px auto;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#8a94b3;padding:10px 18px;border-radius:99px;font-size:12px;cursor:pointer;width:fit-content}
-.admin-btn:hover{background:rgba(45,107,255,.2);color:#fff;border-color:#2d6bff55}
+.admin-btn{margin:22px auto;display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:#8a94b3;padding:11px 20px;border-radius:99px;font-size:13px;cursor:pointer;width:fit-content}
 .copy-box{background:rgba(4,8,20,.8);border:1px dashed rgba(90,110,180,.4);border-radius:14px;padding:13px 14px;font-size:13px;margin-top:10px;color:#cbd5e1;cursor:pointer}
 .page{display:none;max-width:560px;margin:0 auto;padding:16px 16px 40px}
 .back{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;padding:8px 16px;border-radius:12px;cursor:pointer;margin-bottom:16px}
-.input{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;color:#fff;outline:none;margin-top:8px}
+.input{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:12px 14px;color:#fff;margin-top:8px}
 .btn{width:100%;background:linear-gradient(90deg,#2d6bff,#1e40af);border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;cursor:pointer;margin-top:12px}
 .admin-card{background:rgba(15,23,50,.9);border:1px solid rgba(45,107,255,.25);border-radius:18px;padding:16px;margin-bottom:14px}
 </style>
@@ -40,61 +35,59 @@ body{font-family:'Cairo',sans-serif;background:#060a1c;color:#fff;min-height:100
 <body>
 <div class="bg"></div>
 <div id="home">
-<div class="header"><div style="display:flex;gap:12px;align-items:center"><div class="star">★</div><b>Solano Police</b></div><div style="font-size:10px;color:#7c89aa">N.A.F</div></div>
+<div class="header"><div style="display:flex;gap:12px;align-items:center"><div class="star">★</div><b>Solano Police</b></div><div style="font-size:10px">N.A.F</div></div>
 <div class="center">
 <div class="pill">SOLANO POLICE SYSTEM ONLINE <span class="dot"></span></div>
 <div class="badge-wrap"><div class="badge-bar"></div><div class="shield"><div style="text-align:center"><div style="font-size:52px">★</div><b style="letter-spacing:5px;font-size:14px">POLICE</b></div></div></div>
 <div class="big-title">SOLANO<br>POLICE</div>
-<div class="sub-title">N.A.F • ONE STATE ROLEPLAY</div>
 </div>
 <div class="cards">
 <div class="card"><div class="small">قائد الفصيل</div><div class="name" id="leaderName">It's Federal</div></div>
 <div class="card"><div class="small">نواب القائد</div><div class="name" id="deputyNames">Mrr So<br>Abo Bandr</div></div>
-<div class="card" style="border-color:rgba(45,107,255,.35)"><div class="small">الإعداد • القائم على العمل</div><div class="name" id="ownerName">OLIVER MARSHAL</div><div class="owner-tag">★ SYSTEM OWNER</div></div>
-<div class="g-title">غرف الشرطة</div>
-<div class="g-sub">اختر القسم</div>
-<div class="card dept" onclick="openSec('mic')"><div style="font-size:30px;text-align:left">🎙️</div><div style="font-size:19px;font-weight:800;margin-top:10px">قسم المايكروز</div><div style="font-size:11px;color:#7c89aa">التحذيرات والعبارات الجاهزة</div></div>
-<div class="card dept" onclick="openSec('law')"><div style="font-size:30px;text-align:left">📘</div><div style="font-size:19px;font-weight:800;margin-top:10px">قسم الإرشاد</div><div style="font-size:11px;color:#7c89aa">القوانين</div></div>
-<div class="card dept" onclick="openSec('promo')"><div style="font-size:30px;text-align:left">🏅</div><div style="font-size:19px;font-weight:800;margin-top:10px">نظام الترقيات</div><div style="font-size:11px;color:#7c89aa">المتطلبات والشروط</div></div>
-<div class="admin-btn" onclick="openAdmin()">⚙️ ادمن - لوحة التحكم</div>
+<div class="card"><div class="small">الإعداد • القائم على العمل</div><div class="name" id="ownerName">OLIVER MARSHAL</div><div class="owner-tag">★ SYSTEM OWNER</div></div>
+<div class="card" onclick="openSec('mic')" style="cursor:pointer"><div style="font-size:19px;font-weight:800">🎙️ قسم المايكروز</div></div>
+<div class="card" onclick="openSec('law')" style="cursor:pointer"><div style="font-size:19px;font-weight:800">📘 قسم الإرشاد</div></div>
+<div class="card" onclick="openSec('promo')" style="cursor:pointer"><div style="font-size:19px;font-weight:800">🏅 نظام الترقيات</div></div>
+<div class="admin-btn" onclick="openAdmin()">🔒 ادمن - لوحة التحكم</div>
 </div>
 </div>
 <div id="mic" class="page"><button class="back" onclick="goHome()">← رجوع</button><h2>🎙️ قسم المايكروز</h2><div id="micList"></div></div>
-<div id="law" class="page"><button class="back" onclick="goHome()">← رجوع</button><h2>📘 قسم الإرشاد</h2><div class="card" id="lawText" style="margin-top:14px;line-height:2;font-size:13px"></div></div>
-<div id="promo" class="page"><button class="back" onclick="goHome()">← رجوع</button><h2>🏅 نظام الترقيات</h2><div class="card" id="promoText" style="margin-top:14px;line-height:2.2;font-size:13px"></div></div>
+<div id="law" class="page"><button class="back" onclick="goHome()">← رجوع</button><h2>📘 قسم الإرشاد</h2><div class="card" id="lawText" style="margin-top:14px;line-height:2"></div></div>
+<div id="promo" class="page"><button class="back" onclick="goHome()">← رجوع</button><h2>🏅 نظام الترقيات</h2><div class="card" id="promoText" style="margin-top:14px;line-height:2.2"></div></div>
 <div id="admin" class="page">
 <button class="back" onclick="goHome()">← رجوع</button>
 <h2>⚙️ لوحة تحكم OLIVER MARSHAL</h2>
+<p style="font-size:11px;color:#ff4d4d;margin:6px 0 16px">🔐 محمي بكلمة سر - فقط لك</p>
 <div class="admin-card"><div class="small">قائد الفصيل</div><input id="inLeader" class="input"></div>
 <div class="admin-card"><div class="small">النائب الأول</div><input id="inDeputy1" class="input"><div class="small" style="margin-top:10px">النائب الثاني</div><input id="inDeputy2" class="input"></div>
-<div class="admin-card"><div class="small">اسمك (الإعداد)</div><input id="inOwner" class="input"></div>
-<div class="admin-card"><div class="small">جمل المايكروز (كل جملة بسطر)</div><textarea id="inMics" class="input" style="height:140px"></textarea></div>
+<div class="admin-card"><div class="small">اسمك</div><input id="inOwner" class="input"></div>
+<div class="admin-card"><div class="small">جمل المايكروز</div><textarea id="inMics" class="input" style="height:140px"></textarea></div>
 <div class="admin-card"><div class="small">قوانين الإرشاد</div><textarea id="inLaw" class="input" style="height:120px"></textarea></div>
 <div class="admin-card"><div class="small">نظام الترقيات</div><textarea id="inPromo" class="input" style="height:120px"></textarea></div>
 <button class="btn" onclick="saveAll()">💾 حفظ التعديلات</button>
-<p id="saveMsg" style="text-align:center;color:#22ff7a;font-size:12px;margin-top:10px;display:none">✓ تم الحفظ بنجاح</p>
+<p id="saveMsg" style="text-align:center;color:#22ff7a;display:none;margin-top:10px">✓ تم الحفظ</p>
 </div>
 <script>
 const defaults = {
  leader:"It's Federal", deputy1:"Mrr So", deputy2:"Abo Bandr", owner:"OLIVER MARSHAL",
- mics:["🚨 يمنع التجمهر أمام مركز شرطة سولانو","⚠️ المواطن، قف مكانك، معك شرطة سولانو","🛑 تم إغلاق المنطقة لدواعي أمنية","👮‍♂️ شرطة سولانو N.A.F - بإشراف OLIVER MARSHAL","📢 آخر تحذير قبل اتخاذ الإجراء القانوني"],
- law:`القوانين الداخلية - N.A.F
-1. احترام التسلسل: It's Federal > Mrr So / Abo Bandr > OLIVER MARSHAL
-2. عدم استخدام المايك إلا بعد الإذن
+ mics:["🚨 يمنع التجمهر أمام مركز شرطة سولانو","⚠️ المواطن، قف مكانك، معك شرطة سولانو","🛑 تم إغلاق المنطقة لدواعي أمنية","👮‍♂️ شرطة سولانو N.A.F - بإشراف OLIVER MARSHAL"],
+ law:`القوانين الداخلية
+1. احترام التسلسل
+2. عدم استخدام المايك إلا بالإذن
 3. الالتزام بالزي
 
-القوانين الخارجية:
-1. 3 تحذيرات قبل أي إجراء
-2. سبب RP مقنع لكل اعتقال
+القوانين الخارجية
+1. 3 تحذيرات قبل الإجراء
+2. سبب RP مقنع
 3. العمليات الكبرى بإشراف القيادة`,
- promo:`- متدرب → جندي: 5 ساعات + اختبار
+ promo:`- متدرب → جندي: 5 ساعات
 - جندي → عريف: 10 ساعات
-- عريف → رقيب: موافقة Mrr So / Abo Bandr
-- رقيب → ملازم: موافقة It's Federal
-- الرتب العليا: بقرار OLIVER MARSHAL`
+- عريف → رقيب: موافقة النواب
+- رقيب → ملازم: موافقة القائد
+- الرتب العليا: OLIVER MARSHAL`
 };
 function load(){
- let d=JSON.parse(localStorage.getItem('solano_final')||'null')||defaults;
+ let d=JSON.parse(localStorage.getItem('solano_secure')||'null')||defaults;
  document.getElementById('leaderName').innerText=d.leader;
  document.getElementById('deputyNames').innerHTML=d.deputy1+'<br>'+d.deputy2;
  document.getElementById('ownerName').innerText=d.owner;
@@ -124,7 +117,7 @@ function saveAll(){
   law:document.getElementById('inLaw').value,
   promo:document.getElementById('inPromo').value
  };
- localStorage.setItem('solano_final', JSON.stringify(data));
+ localStorage.setItem('solano_secure', JSON.stringify(data));
  load();
  document.getElementById('saveMsg').style.display='block';
  setTimeout(()=>document.getElementById('saveMsg').style.display='none',2000);
@@ -132,13 +125,15 @@ function saveAll(){
 function openSec(id){document.getElementById('home').style.display='none';document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';}
 function goHome(){document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('home').style.display='block';}
 function openAdmin(){
- let pass=prompt('🔐 لوحة تحكم OLIVER MARSHAL\nأدخل كلمة السر:');
- if(pass===null) return;
- if(pass==='OLIVER2026' || pass==='oliver' || pass===''){
+ let pass = prompt('🔒 لوحة تحكم OLIVER MARSHAL\nأدخل كلمة السر:');
+ if(pass === null) return;
+ if(pass === 'OLIVER2026'){
   document.getElementById('home').style.display='none';
   document.querySelectorAll('.page').forEach(p=>p.style.display='none');
   document.getElementById('admin').style.display='block';
- } else {alert('كلمة السر خطأ!\nالصحيحة: OLIVER2026');}
+ } else {
+  alert('❌ كلمة السر خطأ!\nالكلمة الصحيحة: OLIVER2026');
+ }
 }
 load();
 </script>
