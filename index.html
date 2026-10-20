@@ -2,65 +2,53 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SOLANO POLICE - OLIVER MARSHAL | ULTIMATE</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&display=swap" rel="stylesheet">
+<title>SOLANO POLICE</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:#050a1f;color:#fff;overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:#050a1f;color:#fff}
 .bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(800px at 10% 0%,#1230a0aa,transparent),linear-gradient(#070b1e,#040612)}
-.grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:50px 50px;animation:gridMove 20s linear infinite;z-index:-2}
-@keyframes gridMove{from{background-position:0 0}to{background-position:50px 50px}}
-.police-top{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;background:linear-gradient(90deg,#ff0000,#0000ff);animation:police 0.6s infinite alternate}
-@keyframes police{0%{opacity:1;box-shadow:0 0 10px #ff0000}100%{opacity:.6;box-shadow:0 0 20px #0000ff}}
-.wrap{max-width:600px;margin:0 auto;padding:14px 14px 40px}
-.card{background:linear-gradient(180deg,rgba(18,28,62,.9),rgba(10,16,34,.9));backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);border-radius:18px;margin-bottom:12px;cursor:pointer;transition:.3s;position:relative;overflow:hidden}
-.card::after{content:'';position:absolute;top:-60%;left:-60%;width:200%;height:200%;background:linear-gradient(120deg,transparent 35%,rgba(201,168,106,.12) 50%,transparent 65%);transform:rotate(25deg) translateX(-100%);transition:.7s}
-.card:hover{border-color:#c9a86a;transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.4),0 0 20px rgba(201,168,106,.15)}.card:hover::after{transform:rotate(25deg) translateX(100%)}
-.card-inner{padding:18px;position:relative;z-index:1}
-.page{display:none}.back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 18px;border-radius:10px;margin-bottom:14px;cursor:pointer;font-weight:800}
-.input,textarea{width:100%;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px;color:#fff;margin-top:6px}
-.btn{width:100%;background:linear-gradient(90deg,#2d6bff,#1a3db5);border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;margin-top:10px;cursor:pointer;transition:.2s}.btn:hover{transform:scale(1.02)}
-/* ENTRANCE */
-#entrance{position:fixed;inset:0;z-index:99999;background:radial-gradient(900px at 50% -15%,#1430a0,transparent 60%),linear-gradient(180deg,#050a1f 0%,#000 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.3s cubic-bezier(.8,0,.2,1)}
-.logo{width:115px;height:115px;border:2px solid #c9a86a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:44px;box-shadow:0 0 60px rgba(201,168,106,.5),inset 0 0 30px rgba(201,168,106,.15);animation:float 3s ease-in-out infinite,glow 2s ease-in-out infinite alternate}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes glow{0%{box-shadow:0 0 35px rgba(201,168,106,.35)}100%{box-shadow:0 0 85px rgba(201,168,106,.75)}}
-.title{font-size:46px;font-weight:900;letter-spacing:7px;margin-top:20px;background:linear-gradient(90deg,#fff,#c9a86a,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shine 3s linear infinite}
-@keyframes shine{to{background-position:200% center}}
-.sub{letter-spacing:8px;font-size:11px;color:#c9a86a;margin-top:6px}.line{width:0;height:1px;background:linear-gradient(90deg,transparent,#c9a86a,transparent);margin:18px 0;animation:grow 1.2s ease forwards .5s}@keyframes grow{to{width:280px}}
-.owner{font-size:11px;color:#8a94b3;text-align:center;line-height:2;opacity:0;animation:fadeUp .8s ease forwards 1s}@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.enterBtn{margin-top:28px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:16px 50px;border-radius:99px;color:#000;font-weight:900;letter-spacing:3px;cursor:pointer;box-shadow:0 12px 40px rgba(201,168,106,.45);opacity:0;animation:fadeUp .8s ease forwards 1.3s,btnPulse 2s ease-in-out infinite 2.2s;transition:.3s}.enterBtn:hover{transform:scale(1.06);box-shadow:0 18px 50px rgba(201,168,106,.65)}@keyframes btnPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
-.scan{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#2d6bff,transparent);animation:scan 3.5s linear infinite;opacity:.6}@keyframes scan{0%{top:0}100%{top:100%}}
-.particles{position:absolute;inset:0;pointer-events:none}.dot{position:absolute;width:2px;height:2px;background:#c9a86a;border-radius:50%;animation:rise linear infinite}@keyframes rise{from{transform:translateY(100vh);opacity:0}10%{opacity:.9}to{transform:translateY(-10vh);opacity:0}}
-#liveClock{position:fixed;top:10px;left:12px;font-size:10px;color:#c9a86a;background:rgba(0,0,0,.55);padding:5px 12px;border-radius:99px;z-index:100;border:1px solid rgba(201,168,106,.2)}
-canvas#matrix{position:fixed;inset:0;z-index:-1;opacity:.06;pointer-events:none}
+.wrap{max-width:620px;margin:0 auto;padding:14px}
+.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.2s}
+.card:hover{border-color:#c9a86a;transform:translateY(-2px)}
+.card-inner{padding:16px}
+.page{display:none}.back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 16px;border-radius:8px;margin-bottom:12px;cursor:pointer;font-weight:800}
+.input,textarea{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px;color:#fff;margin-top:6px}
+.btn{width:100%;background:#2d6bff;border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;margin-top:10px;cursor:pointer}
+/* ENTRANCE NEW LOGO */
+#entrance{position:fixed;inset:0;z-index:99999;background:radial-gradient(700px at 50% -10%,#1a2f9a,transparent),linear-gradient(180deg,#070d2a,#000);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.2s}
+.badge{width:120px;height:120px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:20px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 50px rgba(201,168,106,.5);animation:float 3s ease-in-out infinite}
+.badge b{font-size:48px;color:#000;line-height:1}.badge span{font-size:9px;letter-spacing:3px;color:#000;font-weight:900;margin-top:2px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.title{font-size:44px;font-weight:900;letter-spacing:5px;margin-top:16px;color:#fff}
+.sub{letter-spacing:6px;font-size:11px;color:#c9a86a;margin-top:4px}
+.line{width:260px;height:1px;background:linear-gradient(90deg,transparent,#c9a86a,transparent);margin:16px 0}
+.owner{font-size:11px;color:#8a94b3;text-align:center}
+.enterBtn{margin-top:22px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:14px 44px;border-radius:99px;color:#000;font-weight:900;letter-spacing:2px;cursor:pointer;box-shadow:0 8px 30px rgba(201,168,106,.4)}
 </style>
 </head>
 <body>
-<div class="police-top"></div><div class="bg"></div><div class="grid-bg"></div>
-<canvas id="matrix"></canvas>
-<div id="liveClock"></div>
+<div class="bg"></div>
 
 <div id="entrance">
-<div class="scan"></div><div class="particles" id="particles"></div>
-<div class="logo">🛡️</div>
+<div class="badge"><b>★</b><span>POLICE</span><span style="font-size:7px">SOLANO</span></div>
 <div class="title">SOLANO POLICE</div>
-<div class="sub">SECURE ACCESS • EST. 1921</div>
+<div class="sub">DEPARTMENT • EST. 1921</div>
 <div class="line"></div>
-<div class="owner">OLIVER MARSHAL • SYSTEM OWNER<br>LEVEL 4 CLEARANCE • VERIFIED • <span id="clockIn"></span></div>
-<button class="enterBtn" onclick="enterSite()">GRANT ENTRY →</button>
-<div style="position:absolute;bottom:22px;font-size:9px;letter-spacing:5px;color:rgba(255,255,255,.18)">INTEGRITY • SERVICE • PROTECTION</div>
+<div class="owner">OLIVER MARSHAL<br>SYSTEM OWNER</div>
+<button class="enterBtn" onclick="enterSite()">دخول النظام →</button>
 </div>
 
-<div id="home"><div class="wrap"><h1 style="text-align:center;margin:26px 0 14px;background:linear-gradient(90deg,#3a5bff,#c9a86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:40px;font-weight:900;letter-spacing:3px">SOLANO POLICE</h1>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px"><div class="card" style="text-align:center"><div class="card-inner"><div style="font-size:20px;font-weight:900" id="c1">0</div><div style="font-size:9px;opacity:.6">ONLINE</div></div></div><div class="card" style="text-align:center"><div class="card-inner"><div style="font-size:20px;font-weight:900" id="c2">0</div><div style="font-size:9px;opacity:.6">ARRESTS</div></div></div><div class="card" style="text-align:center"><div class="card-inner"><div style="font-size:20px;font-weight:900" id="c3">0</div><div style="font-size:9px;opacity:.6">RAIDS</div></div></div></div>
-<div class="card" onclick="nav('haykala')"><div class="card-inner"><b>🏛️ نظام الهيكلة</b><div style="font-size:11px;opacity:.6">القائد + النواب + جميع القيادات</div></div></div>
-<div class="card" onclick="nav('afriqa')"><div class="card-inner"><b>⚔️ نظام الأفرقة</b><div style="font-size:11px;opacity:.6">الخاصة - SWAT - FTO - PFS</div></div></div>
-<div class="card" onclick="nav('qawanin')"><div class="card-inner"><b>⚖️ القوانين العامة</b><div style="font-size:11px;opacity:.6">الداخلية - الخارجية - الإجازات</div></div></div>
-<div class="card" onclick="nav('micro')"><div class="card-inner"><b>🎙️ نظام المايكرو</b><div style="font-size:11px;opacity:.6">التحذيرات - المخالفات</div></div></div>
-<div style="text-align:center;margin-top:14px"><button onclick="openAdmin()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#8a94b3;padding:10px 22px;border-radius:99px;cursor:pointer">🔒 لوحة الادمن</button></div>
+<div id="home"><div class="wrap"><h1 style="text-align:center;margin:20px 0;background:linear-gradient(90deg,#3a5bff,#c9a86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px;font-weight:900">SOLANO POLICE</h1>
+<div class="card" onclick="nav('haykala')"><div class="card-inner">🏛️ نظام الهيكلة</div></div>
+<div class="card" onclick="nav('afriqa')"><div class="card-inner">⚔️ نظام الأفرقة</div></div>
+<div class="card" onclick="nav('qawanin')"><div class="card-inner">⚖️ القوانين</div></div>
+<div class="card" onclick="nav('micro')"><div class="card-inner">🎙️ المايكرو</div></div>
+<div style="text-align:center;margin-top:12px"><button onclick="openAdmin()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#8a94b3;padding:8px 18px;border-radius:99px;cursor:pointer">🔒 ادمن</button></div>
 </div></div>
 
+<!-- PAGES -->
 <div id="haykala" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🏛️ الهيكلة</h2>
-<div class="card" onclick="nav('leaderTop')"><div class="card-inner">👑 القائد أعلى رتبة</div></div>
+<div class="card" onclick="nav('leaderTop')"><div class="card-inner">👑 القائد</div></div>
 <div class="card" onclick="nav('federal')"><div class="card-inner">⭐ النواب الفيدراليون</div></div>
 <div class="card" onclick="nav('irshad')"><div class="card-inner">📘 قائد الإرشاد</div></div>
 <div class="card" onclick="nav('muqablat')"><div class="card-inner">🎤 قائد المقابلات</div></div>
@@ -73,25 +61,13 @@ canvas#matrix{position:fixed;inset:0;z-index:-1;opacity:.06;pointer-events:none}
 
 <div id="afriqa" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>⚔️ الأفرقة</h2>
 <div class="card" onclick="nav('teamSpecial')"><div class="card-inner">أ- القوات الخاصة</div></div>
-<div class="card" onclick="nav('teamSwat')"><div class="card-inner">ب- قوات السوات</div></div>
+<div class="card" onclick="nav('teamSwat')"><div class="card-inner">ب- SWAT</div></div>
 <div class="card" onclick="nav('teamFTO')"><div class="card-inner">ج- FTO</div></div>
 <div class="card" onclick="nav('teamPFS')"><div class="card-inner">د- PFS</div></div>
 </div></div>
 
-<div id="qawanin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>⚖️ القوانين</h2>
-<div class="card" onclick="nav('internal')"><div class="card-inner">📘 الداخلية</div></div>
-<div class="card" onclick="nav('external')"><div class="card-inner">🌐 الخارجية</div></div>
-<div class="card" onclick="nav('vacation')"><div class="card-inner">🏖️ الإجازات</div></div>
-</div></div>
-
-<div id="micro" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🎙️ المايكرو</h2>
-<div class="card" onclick="nav('warnings')"><div class="card-inner">⚠️ التحذيرات</div></div>
-<div class="card" onclick="nav('violations')"><div class="card-inner">🚫 المخالفات</div></div>
-</div></div>
-
-<!-- Leaders -->
-<div id="leaderTop" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="t-leaderTop"></h2><div id="c-leaderTop"></div></div></div>
-<div id="federal" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="t-federal"></h2><div id="c-federal"></div></div></div>
+<div id="leaderTop" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>القائد</h2><div class="card"><div class="card-inner" id="c-leaderTop" style="text-align:center;font-size:22px;font-weight:900"></div></div></div></div>
+<div id="federal" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>النواب الفيدراليون</h2><div id="c-federal"></div></div></div>
 <div id="irshad" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="t-irshad"></h2><div id="c-irshad"></div></div></div>
 <div id="muqablat" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="t-muqablat"></h2><div id="c-muqablat"></div></div></div>
 <div id="faalyat" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="t-faalyat"></h2><div id="c-faalyat"></div></div></div>
@@ -105,51 +81,47 @@ canvas#matrix{position:fixed;inset:0;z-index:-1;opacity:.06;pointer-events:none}
 <div id="teamFTO" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>ج- FTO</h2><div id="c-teamFTO"></div></div></div>
 <div id="teamPFS" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>د- PFS</h2><div id="c-teamPFS"></div></div></div>
 
-<div id="internal" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-internal" style="white-space:pre-wrap;line-height:2"></div></div></div></div>
-<div id="external" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-external" style="white-space:pre-wrap;line-height:2"></div></div></div></div>
-<div id="vacation" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-vacation" style="white-space:pre-wrap;line-height:2"></div></div></div></div>
-<div id="warnings" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-warnings" style="white-space:pre-wrap;line-height:2"></div></div></div></div>
-<div id="violations" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-violations" style="white-space:pre-wrap;line-height:2"></div></div></div></div>
-<div id="subPage" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="subTitle"></h2><div class="card"><div class="card-inner" id="subText" style="white-space:pre-wrap;line-height:2"></div></div></div></div>
-<div id="admin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>لوحة التحكم</h2><div id="adminInputs"></div><button class="btn" onclick="saveAll()">💾 حفظ</button></div></div>
+<div id="qawanin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card" onclick="nav('internal')"><div class="card-inner">الداخلية</div></div><div class="card" onclick="nav('external')"><div class="card-inner">الخارجية</div></div><div class="card" onclick="nav('vacation')"><div class="card-inner">الإجازات</div></div></div></div>
+<div id="micro" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card" onclick="nav('warnings')"><div class="card-inner">التحذيرات</div></div><div class="card" onclick="nav('violations')"><div class="card-inner">المخالفات</div></div></div></div>
+<div id="internal" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-internal" style="white-space:pre-wrap"></div></div></div></div>
+<div id="external" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-external" style="white-space:pre-wrap"></div></div></div></div>
+<div id="vacation" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-vacation" style="white-space:pre-wrap"></div></div></div></div>
+<div id="warnings" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-warnings" style="white-space:pre-wrap"></div></div></div></div>
+<div id="violations" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-violations" style="white-space:pre-wrap"></div></div></div></div>
+<div id="subPage" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="subTitle"></h2><div class="card"><div class="card-inner" id="subText" style="white-space:pre-wrap"></div></div></div></div>
+<div id="admin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>لوحة التحكم</h2><div id="adminInputs"></div><button class="btn" onclick="saveAll()">حفظ</button></div></div>
 
 <script>
 let stack=[],current='home';
 const defaults={
-leaderTop:{name:"36 - Its Federal",deps:["41 - Mrr So","40 - Abo Bandar","32 - OLIVER MARSHAL"]},
-federal:{name:"النواب الفيدراليون",deps:["41 - Mrr So","40 - Abo Bandar","32 - OLIVER"]},
-irshad:{name:"قائد الإرشاد",deps:["نائب 1","نائب 2","نائب 3"]},
-muqablat:{name:"قائد المقابلات",deps:["نائب 1","نائب 2","نائب 3"]},
-faalyat:{name:"قائد الفعاليات",deps:["نائب 1","نائب 2","نائب 3"]},
-special:{name:"قائد القوات الخاصة",deps:["نائب 1","نائب 2","نائب 3"]},
-swat:{name:"قائد SWAT",deps:["نائب 1","نائب 2","نائب 3"]},
-pfs:{name:"قائد PFS",deps:["نائب 1","نائب 2","نائب 3"]},
-fto:{name:"قائد FTO",deps:["نائب 1","نائب 2","نائب 3"]},
-teamSpecial:{intro:"نخبة شرطة سولانو",qawanin:"قوانين الخاصة",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"استمارة الترقية",awqat:"أوقات الدوريات"},
-teamSwat:{qawanin:"قوانين SWAT",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"تدريبات"},
-teamFTO:{qawanin:"قوانين FTO",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات الإرشاد"},
-teamPFS:{qawanin:"قوانين PFS",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"رخصة الاعتقال"},
+leaderTop:"Its Federal",
+federal:["Mrr So","Abo Bandar","OLIVER MARSHAL"],
+irshad:{name:"قائد الإرشاد",deps:["الاسم","الاسم","الاسم"]},
+muqablat:{name:"قائد المقابلات",deps:["الاسم","الاسم","الاسم"]},
+faalyat:{name:"قائد الفعاليات",deps:["الاسم","الاسم","الاسم"]},
+special:{name:"قائد القوات الخاصة",deps:["الاسم","الاسم","الاسم"]},
+swat:{name:"قائد SWAT",deps:["الاسم","الاسم","الاسم"]},
+pfs:{name:"قائد PFS",deps:["الاسم","الاسم","الاسم"]},
+fto:{name:"قائد FTO",deps:["الاسم","الاسم","الاسم"]},
+teamSpecial:{intro:"فريق النخبة - يختص بالمداهمات والعمليات الخاصة",leader:"قائد الفريق",deps:["نائب 1","نائب 2"],qawanin:"قوانين الخاصة",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
+teamSwat:{intro:"فريق التدخل السريع",leader:"قائد SWAT",deps:["نائب 1","نائب 2"],qawanin:"قوانين SWAT",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"تدريبات"},
+teamFTO:{intro:"فريق التدريب والتأهيل",leader:"قائد FTO",deps:["نائب 1","نائب 2"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
+teamPFS:{intro:"فريق حماية الشخصيات",leader:"قائد PFS",deps:["نائب 1","نائب 2"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
 internal:"الداخلية",external:"الخارجية",vacation:"الإجازات",warnings:"التحذيرات",violations:"المخالفات"
 };
-function enterSite(){let e=document.getElementById('entrance');e.style.transform='scale(1.25)';e.style.opacity='0';setTimeout(()=>e.style.display='none',1200);}
+function enterSite(){document.getElementById('entrance').style.opacity='0';setTimeout(()=>document.getElementById('entrance').style.display='none',800);}
 function nav(id){stack.push(current);current=id;document.getElementById('home').style.display='none';document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';render(id);}
 function goBack(){document.querySelectorAll('.page').forEach(p=>p.style.display='none');let prev=stack.pop()||'home';current=prev;if(prev==='home')document.getElementById('home').style.display='block';else{document.getElementById(prev).style.display='block';render(prev);}}
-function render(id){let data=JSON.parse(localStorage.getItem('solano_v6')||'null')||defaults;if(defaults[id]?.deps){let o=data[id]||defaults[id];let t=document.getElementById('t-'+id);if(t)t.innerText=o.name;document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:linear-gradient(180deg,rgba(201,168,106,.18),rgba(255,255,255,.05));border:1px solid rgba(201,168,106,.35)"><b style="font-size:19px">${o.name}</b><div style="font-size:11px;opacity:.7">القائد</div></div></div>`+o.deps.map(d=>`<div class="card"><div class="card-inner">⭐ ${d}</div></div>`).join('');}
-if(id.startsWith('team')){let o=data[id]||defaults[id];let lbl={qawanin:"📘 القوانين",taalimat:"📋 التعليمات",mutat:"📝 المتطلبات",taraqi:"📈 استمارة الترقية",awqat:"⏰ الأوقات",intro:"📖 تعريف"};let h='';Object.keys(o).forEach(k=>h+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">${lbl[k]||k}</div></div>`);document.getElementById('c-'+id).innerHTML=h;}
-if(['internal','external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];}
-function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_v6')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=team+' - '+k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
-// particles
-const pEl=document.getElementById('particles');for(let i=0;i<28;i++){let d=document.createElement('div');d.className='dot';d.style.left=Math.random()*100+'%';d.style.animationDuration=(3+Math.random()*6)+'s';d.style.animationDelay=Math.random()*5+'s';pEl.appendChild(d);}
-// counters
-let n1=0,n2=0,n3=0;setInterval(()=>{if(n1<47)n1++;if(n2<128)n2+=2;if(n3<23)n3++;let a=document.getElementById('c1'),b=document.getElementById('c2'),c=document.getElementById('c3');if(a)a.innerText=n1;if(b)b.innerText=n2;if(c)c.innerText=n3;},70);
-// clock
-setInterval(()=>{let s=new Date().toLocaleTimeString('ar-JO');let e=document.getElementById('liveClock'),e2=document.getElementById('clockIn');if(e)e.innerText='🕒 '+s;if(e2)e2.innerText=s;},1000);
-// matrix rain
-const canvas=document.getElementById('matrix');const ctx=canvas.getContext('2d');function resize(){canvas.width=innerWidth;canvas.height=innerHeight}resize();window.addEventListener('resize',resize);
-let drops=[];for(let i=0;i<90;i++)drops.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,s:Math.random()*2+1});
-(function loop(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#2d6bff';drops.forEach(d=>{ctx.fillRect(d.x,d.y,1,10*d.s);d.y+=d.s;if(d.y>canvas.height){d.y=-10;d.x=Math.random()*canvas.width}});requestAnimationFrame(loop)})();
-function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_v6')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';Object.keys(defaults).forEach(k=>{if(defaults[k].deps){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"><input id="a_${k}_3" class="input" value="${data[k]?.deps[2]||''}"></div></div>`}else if(typeof defaults[k]==='object'){Object.keys(defaults[k]).forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${s}</b><textarea id="a_${k}_${s}" class="input" style="height:70px">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input" style="height:70px">${data[k]||defaults[k]}</textarea></div></div>`}})}
-function saveAll(){let data={};Object.keys(defaults).forEach(k=>{if(defaults[k].deps){data[k]={name:document.getElementById(`a_${k}_n`).value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value,document.getElementById(`a_${k}_3`).value]}}else if(typeof defaults[k]==='object'){data[k]={};Object.keys(defaults[k]).forEach(s=>{let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value})}else{let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_v6',JSON.stringify(data));alert('تم ✅');document.getElementById('home').style.display='block';document.querySelectorAll('.page').forEach(p=>p.style.display='none');stack=[];current='home';}
+function render(id){let data=JSON.parse(localStorage.getItem('solano_final')||'null')||defaults;
+if(id==='leaderTop'){document.getElementById('c-leaderTop').innerText=data.leaderTop||defaults.leaderTop;}
+if(id==='federal'){document.getElementById('c-federal').innerHTML=(data.federal||defaults.federal).map(n=>`<div class="card"><div class="card-inner">⭐ ${n}</div></div>`).join('');}
+if(defaults[id]?.name&&id!=='leaderTop'&&id!=='federal'&&!id.startsWith('team')){let o=data[id]||defaults[id];document.getElementById('t-'+id).innerText=o.name;document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:rgba(201,168,106,.15);border:1px solid rgba(201,168,106,.3)"><b>${o.name}</b><div style="font-size:11px;opacity:.7">القائد</div></div></div>`+o.deps.map(d=>`<div class="card"><div class="card-inner">${d} - نائب</div></div>`).join('');}
+if(id.startsWith('team')){let o=data[id]||defaults[id];let html=`<div class="card"><div class="card-inner" style="background:rgba(45,107,255,.12);border:1px solid rgba(45,107,255,.25)"><b>📖 تعريف الفريق</b><br><div style="margin-top:6px;font-size:13px;opacity:.9">${o.intro}</div><br><b>👑 ${o.leader}</b><div style="margin-top:6px">${o.deps.map(d=>`• ${d}`).join('<br>')}</div></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(k=>{if(o[k])html+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">${k}</div></div>`});document.getElementById('c-'+id).innerHTML=html;}
+if(['internal','external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];
+}
+function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_final')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
+function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_final')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (افصل بفاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} - اسم القائد</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><b>نواب</b><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"><input id="a_${k}_3" class="input" value="${data[k]?.deps[2]||''}"></div></div>`}else if(typeof defaults[k]==='object'&&k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} - تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد الفريق</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`;Object.keys(defaults[k]).forEach(s=>{if(!['intro','leader','deps'].includes(s)){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${s}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`}})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
+function saveAll(){let data={};data.leaderTop=document.getElementById('a_leaderTop').value;data.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim());Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){let e1=document.getElementById(`a_${k}_n`);if(e1)data[k]={name:e1.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value,document.getElementById(`a_${k}_3`).value]}}else if(typeof defaults[k]==='object'&&k.startsWith('team')){data[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value]};Object.keys(defaults[k]).forEach(s=>{if(!['intro','leader','deps'].includes(s)){let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value}})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_final',JSON.stringify(data));alert('تم');location.reload();}
 </script>
 </body>
 </html>
