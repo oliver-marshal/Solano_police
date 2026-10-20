@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+د<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,7 +11,7 @@
 .news span{display:inline-block;animation:ns 25s linear infinite}
 @keyframes ns{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
 .wrap{max-width:620px;margin:32px auto 20px;padding:14px}
-.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.25s;position:relative}
+.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.25s}
 .card:hover{border-color:#c9a86a;transform:translateY(-2px);box-shadow:0 0 18px rgba(201,168,106,.18)}
 .card-inner{padding:16px}
 .page{display:none}.back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 16px;border-radius:8px;margin-bottom:12px;cursor:pointer;font-weight:800}
@@ -100,7 +100,7 @@
 
 <script>
 let stack=[],current='home';
-const arabicNames={qawanin:"📜 قوانين الفريق",taalimat:"📋 تعليمات الفريق",mutat:"✅ متطلبات الانضمام",taraqi:"⭐ نظام الترقية",awqat:"⏰ الأوقات والتدريبات"};
+const arabicNames={qawanin:"📜 قوانين الفريق",taalimat:"📋 تعليمات الفريق",mutat:"📝 متطلبات الترقية",taraqi:"⭐ نظام الترقية",awqat:"⏰ الأوقات والتدريبات"};
 const defaults={
 leaderTop:"Its Federal",
 federal:["Mrr So","Abo Bandar"],
@@ -111,16 +111,16 @@ special:{name:"قائد القوات الخاصة",deps:["الاسم","الاس�
 swat:{name:"قائد SWAT",deps:["الاسم","الاسم"]},
 pfs:{name:"قائد PFS",deps:["الاسم","الاسم"]},
 fto:{name:"قائد FTO",deps:["الاسم","الاسم"]},
-teamSpecial:{intro:"وحدة النخبة - المداهمات والعمليات الخطرة",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني"],qawanin:"القوانين هنا",taalimat:"التعليمات هنا",mutat:"المتطلبات هنا",taraqi:"الترقية هنا",awqat:"الأوقات هنا"},
-teamSwat:{intro:"وحدة التدخل السريع والاقتحام",leader:"قائد SWAT",deps:["النائب الأول","النائب الثاني"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"تدريبات"},
-teamFTO:{intro:"التدريب والتأهيل للمستجدين",leader:"قائد FTO",deps:["النائب الأول","النائب الثاني"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
-teamPFS:{intro:"حماية الشخصيات والمنشآت",leader:"قائد PFS",deps:["النائب الأول","النائب الثاني"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
+teamSpecial:{intro:"وحدة النخبة - المداهمات والعمليات الخطرة",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"القوانين",taalimat:"التعليمات",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"الأوقات"},
+teamSwat:{intro:"وحدة التدخل السريع والاقتحام",leader:"قائد SWAT",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"تدريبات"},
+teamFTO:{intro:"التدريب والتأهيل للمستجدين",leader:"قائد FTO",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات"},
+teamPFS:{intro:"حماية الشخصيات والمنشآت",leader:"قائد PFS",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات"},
 internal:"الداخلية",external:"الخارجية",vacation:"الإجازات",warnings:"التحذيرات",violations:"المخالفات"
 };
 function enterSite(){document.getElementById('entrance').style.opacity='0';setTimeout(()=>document.getElementById('entrance').style.display='none',800);}
 function nav(id){stack.push(current);current=id;document.getElementById('home').style.display='none';document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';render(id);}
 function goBack(){document.querySelectorAll('.page').forEach(p=>p.style.display='none');let prev=stack.pop()||'home';current=prev;if(prev==='home')document.getElementById('home').style.display='block';else{document.getElementById(prev).style.display='block';render(prev);}}
-function render(id){let data=JSON.parse(localStorage.getItem('solano_final_fixed')||'null')||defaults;
+function render(id){let data=JSON.parse(localStorage.getItem('solano_v10_final')||'null')||defaults;
 if(id==='leaderTop')document.getElementById('c-leaderTop').innerText=data.leaderTop||defaults.leaderTop;
 if(id==='federal')document.getElementById('c-federal').innerHTML=(data.federal||defaults.federal).map(n=>`<div class="card"><div class="card-inner">⭐ ${n}</div></div>`).join('');
 if(defaults[id]?.name&&!id.startsWith('team')&&id!=='federal'&&id!=='leaderTop'){let o=data[id]||defaults[id];document.getElementById('t-'+id).innerText=o.name;document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:rgba(201,168,106,.15);border:1px solid rgba(201,168,106,.3)"><b style="color:#c9a86a">${o.name}</b></div></div>`+o.deps.map(d=>`<div class="card"><div class="card-inner">• ${d}</div></div>`).join('');}
@@ -128,7 +128,14 @@ if(id.startsWith('team')){
 let o=data[id]||defaults[id];
 let html=`<div class="card"><div class="card-inner" style="background:linear-gradient(135deg,rgba(45,107,255,.15),rgba(18,28,62,.9));border:1px solid rgba(45,107,255,.3)">
 <div><b>📖 تعريف الفريق</b></div><div style="margin-top:8px;line-height:1.8">${o.intro}</div>
-<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)"><b>👑 القائد: ${o.leader}</b><div style="margin-top:6px">${o.deps.map(d=>`▸ ${d}`).join('<br>')}</div><div class="sig">Approved by Oliver Marshal</div></div></div></div>`;
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)">
+<b>👑 القائد: ${o.leader}</b>
+<div style="margin-top:10px">
+<div style="color:#c9a86a;font-weight:800;margin-bottom:4px">نواب القائد (3):</div>
+<div style="line-height:2">${o.deps.map((d,i)=>`▸ النائب ${i+1}: ${d}`).join('<br>')}</div>
+</div>
+<div class="sig" style="margin-top:10px">Approved by Oliver Marshal</div>
+</div></div></div>`;
 ['qawanin','taalimat','mutat','taraqi','awqat'].forEach(k=>{
 if(o[k]) html+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">${arabicNames[k]||k}</div></div>`;
 });
@@ -136,9 +143,9 @@ document.getElementById('c-'+id).innerHTML=html;
 }
 if(['internal','external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];
 }
-function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_final_fixed')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=arabicNames[k]||k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
-function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_final_fixed')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`}else if(k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${arabicNames[s]}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
-function saveAll(){let data={};data.leaderTop=document.getElementById('a_leaderTop').value;data.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim());Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){let e=document.getElementById(`a_${k}_n`);if(e)data[k]={name:e.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value]}}else if(k.startsWith('team')){data[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value]};['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_final_fixed',JSON.stringify(data));alert('تم ✅');location.reload();}
+function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_v10_final')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=arabicNames[k]||k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
+function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_v10_final')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`}else if(k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>3 نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"><input id="a_${k}_d3" class="input" value="${data[k]?.deps[2]||''}"></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${arabicNames[s]}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
+function saveAll(){let data={};data.leaderTop=document.getElementById('a_leaderTop').value;data.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim());Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){let e=document.getElementById(`a_${k}_n`);if(e)data[k]={name:e.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value]}}else if(k.startsWith('team')){data[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value,document.getElementById(`a_${k}_d3`).value]};['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_v10_final',JSON.stringify(data));alert('تم حفظ 3 نواب لكل فريق ✅');location.reload();}
 </script>
 </body>
 </html>
