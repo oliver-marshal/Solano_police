@@ -9,7 +9,7 @@
 .bg{position:fixed;inset:0;z-index:-4;background:radial-gradient(800px at 10% 0%,#1230a0aa,transparent),linear-gradient(#070b1e,#040612)}
 .smoke{position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 100%,rgba(201,168,106,.09),transparent 65%),radial-gradient(ellipse at 20% 20%,rgba(45,107,255,.12),transparent 50%);animation:smokeMove 10s ease-in-out infinite}
 @keyframes smokeMove{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-.news{position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#a00,#ff0000);color:#fff;padding:5px 0;z-index:9998;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:1px}
+.news{position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#0a1a4a,#1a3a8a);color:#c9a86a;padding:5px 0;z-index:9998;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:2px;border-bottom:1px solid rgba(201,168,106,.3)}
 .news span{display:inline-block;animation:newsScroll 25s linear infinite}
 @keyframes newsScroll{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
 .wrap{max-width:620px;margin:32px auto 20px;padding:14px}
@@ -21,8 +21,7 @@
 .btn{width:100%;background:linear-gradient(90deg,#2d6bff,#1a3db5);border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;margin-top:10px;cursor:pointer}
 .stamp{position:absolute;top:10px;left:10px;border:2px solid #ff2a2a;color:#ff2a2a;padding:3px 7px;font-weight:900;font-size:8px;letter-spacing:1px;transform:rotate(-12deg);opacity:.7;border-radius:3px}
 .sig{font-family:'Cairo',cursive;color:#c9a86a;font-size:13px;margin-top:8px;letter-spacing:1px}
-.danger{display:flex;gap:4px;align-items:center;margin-top:6px;font-size:10px}.bar{width:18px;height:6px;border-radius:2px}.bar.on{background:#ff2a2a;box-shadow:0 0 6px #ff2a2a}.bar.off{background:rgba(255,255,255,.15)}
-/* ENTRANCE */
+.danger{display:flex;gap:4px;align-items:center;margin-top:6px;font-size:10px}.bar{width:18px;height:6px;border-radius:2px}.bar.on{background:#c9a86a;box-shadow:0 0 6px #c9a86a}.bar.off{background:rgba(255,255,255,.15)}
 #entrance{position:fixed;inset:0;z-index:99999;background:radial-gradient(700px at 50% -10%,#1a2f9a,transparent),linear-gradient(180deg,#070d2a,#000);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.2s}
 .badge{width:122px;height:122px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 55px rgba(201,168,106,.55),inset 0 0 20px rgba(0,0,0,.3);animation:float 3s ease-in-out infinite}
 .badge b{font-size:50px;color:#000;line-height:1}.badge span{font-size:9px;letter-spacing:3px;color:#000;font-weight:900}
@@ -38,7 +37,7 @@
 </head>
 <body>
 <div class="bg"></div><div class="smoke"></div>
-<div class="news"><span>🚨 SOLANO POLICE • حالة استنفار عام • جميع الوحدات الالتزام بالقوانين • اجتماع القيادات الساعة 21:00 • OLIVER MARSHAL SYSTEM OWNER • SECURE ACCESS •</span></div>
+<div class="news"><span>★ SOLANO POLICE DEPARTMENT • OLIVER MARSHAL • SYSTEM OWNER • SOLANO POLICE • OLIVER MARSHAL • ★</span></div>
 
 <div id="entrance">
 <div class="badge"><b>★</b><span>POLICE</span><span style="font-size:7px">SOLANO</span></div>
@@ -51,26 +50,21 @@
 </div>
 
 <div id="home"><div class="wrap">
-<!-- ID CARD -->
 <div class="idCard">
 <div class="idAvatar">OM</div>
-<div><div style="font-weight:900;letter-spacing:1px">OLIVER MARSHAL</div><div style="font-size:10px;opacity:.7">ID: SP-32 • LEVEL 4 CLEARANCE • OWNER</div><div class="danger"><div class="bar on"></div><div class="bar on"></div><div class="bar off"></div><span>THREAT LEVEL: MEDIUM</span></div></div>
+<div><div style="font-weight:900;letter-spacing:1px">OLIVER MARSHAL</div><div style="font-size:10px;opacity:.7">ID: SP-32 • LEVEL 4 • OWNER</div><div class="danger"><div class="bar on"></div><div class="bar off"></div><span>OWNER ACCESS</span></div></div>
 <div class="stamp">CLASSIFIED</div>
 </div>
-
 <h1 style="text-align:center;margin:10px 0 14px;background:linear-gradient(90deg,#3a5bff,#c9a86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px;font-weight:900">SOLANO POLICE</h1>
-
-<div class="card" onclick="nav('haykala')"><div class="card-inner"><b>🏛️ نظام الهيكلة</b><div style="font-size:11px;opacity:.6">القائد فقط + النواب الفيدراليون + القيادات</div></div></div>
-<div class="card" onclick="nav('afriqa')"><div class="card-inner"><b>⚔️ نظام الأفرقة</b><div style="font-size:11px;opacity:.6">تعريف الفريق + القائد + النواب</div></div></div>
+<div class="card" onclick="nav('haykala')"><div class="card-inner"><b>🏛️ نظام الهيكلة</b></div></div>
+<div class="card" onclick="nav('afriqa')"><div class="card-inner"><b>⚔️ نظام الأفرقة</b></div></div>
 <div class="card" onclick="nav('qawanin')"><div class="card-inner"><b>⚖️ القوانين</b></div></div>
 <div class="card" onclick="nav('micro')"><div class="card-inner"><b>🎙️ المايكرو</b></div></div>
 <div style="text-align:center;margin-top:10px"><button onclick="openAdmin()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#8a94b3;padding:8px 18px;border-radius:99px;cursor:pointer">🔒 ادمن</button></div>
-<div class="sig" style="text-align:center;margin-top:14px">System Designed by Oliver Marshal</div>
 </div></div>
 
-<!-- الهيكلة -->
 <div id="haykala" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🏛️ الهيكلة</h2>
-<div class="card" onclick="nav('leaderTop')"><div class="card-inner">👑 القائد - اسم فقط</div></div>
+<div class="card" onclick="nav('leaderTop')"><div class="card-inner">👑 القائد</div></div>
 <div class="card" onclick="nav('federal')"><div class="card-inner">⭐ النواب الفيدراليون</div></div>
 <div class="card" onclick="nav('irshad')"><div class="card-inner">📘 قائد الإرشاد</div></div>
 <div class="card" onclick="nav('muqablat')"><div class="card-inner">🎤 قائد المقابلات</div></div>
@@ -118,7 +112,7 @@
 let stack=[],current='home';
 const defaults={
 leaderTop:"Its Federal",
-federal:["Mrr So","Abo Bandar","OLIVER MARSHAL"],
+federal:["Mrr So","Abo Bandar"],
 irshad:{name:"قائد الإرشاد",deps:["الاسم","الاسم"]},
 muqablat:{name:"قائد المقابلات",deps:["الاسم","الاسم"]},
 faalyat:{name:"قائد الفعاليات",deps:["الاسم","الاسم"]},
