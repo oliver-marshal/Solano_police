@@ -2,60 +2,50 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SOLANO POLICE - BEAUTY EDITION</title>
+<title>SOLANO POLICE</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:#050a1f;color:#fff;overflow-x:hidden}
 .bg{position:fixed;inset:0;z-index:-4;background:radial-gradient(800px at 10% 0%,#1230a0aa,transparent),linear-gradient(#070b1e,#040612)}
-.smoke{position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% 100%,rgba(201,168,106,.09),transparent 65%),radial-gradient(ellipse at 20% 20%,rgba(45,107,255,.12),transparent 50%);animation:smokeMove 10s ease-in-out infinite}
-@keyframes smokeMove{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
 .news{position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#0a1a4a,#1a3a8a);color:#c9a86a;padding:5px 0;z-index:9998;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:2px;border-bottom:1px solid rgba(201,168,106,.3)}
-.news span{display:inline-block;animation:newsScroll 25s linear infinite}
-@keyframes newsScroll{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+.news span{display:inline-block;animation:ns 25s linear infinite}
+@keyframes ns{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
 .wrap{max-width:620px;margin:32px auto 20px;padding:14px}
-.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
-.card:hover{border-color:#c9a86a;transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.4),0 0 18px rgba(201,168,106,.18)}
-.card-inner{padding:16px;position:relative}
+.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.25s;position:relative}
+.card:hover{border-color:#c9a86a;transform:translateY(-2px);box-shadow:0 0 18px rgba(201,168,106,.18)}
+.card-inner{padding:16px}
 .page{display:none}.back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 16px;border-radius:8px;margin-bottom:12px;cursor:pointer;font-weight:800}
 .input,textarea{width:100%;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px;color:#fff;margin-top:6px}
-.btn{width:100%;background:linear-gradient(90deg,#2d6bff,#1a3db5);border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;margin-top:10px;cursor:pointer}
-.stamp{position:absolute;top:10px;left:10px;border:2px solid #ff2a2a;color:#ff2a2a;padding:3px 7px;font-weight:900;font-size:8px;letter-spacing:1px;transform:rotate(-12deg);opacity:.7;border-radius:3px}
-.sig{font-family:'Cairo',cursive;color:#c9a86a;font-size:13px;margin-top:8px;letter-spacing:1px}
-.danger{display:flex;gap:4px;align-items:center;margin-top:6px;font-size:10px}.bar{width:18px;height:6px;border-radius:2px}.bar.on{background:#c9a86a;box-shadow:0 0 6px #c9a86a}.bar.off{background:rgba(255,255,255,.15)}
+.btn{width:100%;background:#2d6bff;border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;margin-top:10px;cursor:pointer}
+.sig{color:#c9a86a;font-size:11px;margin-top:8px}
 #entrance{position:fixed;inset:0;z-index:99999;background:radial-gradient(700px at 50% -10%,#1a2f9a,transparent),linear-gradient(180deg,#070d2a,#000);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.2s}
-.badge{width:122px;height:122px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 55px rgba(201,168,106,.55),inset 0 0 20px rgba(0,0,0,.3);animation:float 3s ease-in-out infinite}
-.badge b{font-size:50px;color:#000;line-height:1}.badge span{font-size:9px;letter-spacing:3px;color:#000;font-weight:900}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
-.title{font-size:44px;font-weight:900;letter-spacing:5px;margin-top:16px;color:#fff;text-shadow:0 0 30px rgba(201,168,106,.3)}
-.sub{letter-spacing:7px;font-size:11px;color:#c9a86a;margin-top:4px}
+.badge{width:122px;height:122px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 55px rgba(201,168,106,.55);animation:fl 3s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.badge b{font-size:50px;color:#000}.badge span{font-size:9px;letter-spacing:3px;color:#000;font-weight:900}
+.title{font-size:44px;font-weight:900;letter-spacing:5px;margin-top:16px}
+.sub{letter-spacing:7px;font-size:11px;color:#c9a86a}
 .line{width:270px;height:1px;background:linear-gradient(90deg,transparent,#c9a86a,transparent);margin:16px 0}
-.owner{font-size:11px;color:#8a94b3;text-align:center;line-height:1.9}
-.enterBtn{margin-top:22px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:14px 46px;border-radius:99px;color:#000;font-weight:900;letter-spacing:2px;cursor:pointer;box-shadow:0 10px 35px rgba(201,168,106,.45);transition:.2s}.enterBtn:hover{transform:scale(1.05)}
-.idCard{background:linear-gradient(135deg,#0e1e4a 0%,#1c3a8a 100%);border:1px solid rgba(201,168,106,.35);border-radius:14px;padding:12px;display:flex;gap:12px;align-items:center;margin-bottom:14px;position:relative}
-.idAvatar{width:48px;height:48px;background:linear-gradient(135deg,#c9a86a,#8c6d3a);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:20px}
+.owner{font-size:11px;color:#8a94b3;text-align:center}
+.enterBtn{margin-top:22px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:14px 46px;border-radius:99px;color:#000;font-weight:900;letter-spacing:2px;cursor:pointer}
+.idCard{background:linear-gradient(135deg,#0e1e4a,#1c3a8a);border:1px solid rgba(201,168,106,.35);border-radius:14px;padding:12px;display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.idAvatar{width:48px;height:48px;background:linear-gradient(135deg,#c9a86a,#8c6d3a);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900}
 </style>
 </head>
 <body>
-<div class="bg"></div><div class="smoke"></div>
-<div class="news"><span>★ SOLANO POLICE DEPARTMENT • OLIVER MARSHAL • SYSTEM OWNER • SOLANO POLICE • OLIVER MARSHAL • ★</span></div>
-
+<div class="bg"></div>
+<div class="news"><span>★ SOLANO POLICE DEPARTMENT • OLIVER MARSHAL • SYSTEM OWNER •</span></div>
 <div id="entrance">
 <div class="badge"><b>★</b><span>POLICE</span><span style="font-size:7px">SOLANO</span></div>
 <div class="title">SOLANO POLICE</div>
 <div class="sub">DEPARTMENT • EST. 1921</div>
 <div class="line"></div>
-<div class="owner">OLIVER MARSHAL<br>SYSTEM OWNER • VERIFIED ACCESS</div>
+<div class="owner">OLIVER MARSHAL<br>SYSTEM OWNER</div>
 <button class="enterBtn" onclick="enterSite()">دخول النظام →</button>
 <div class="sig">- Oliver Marshal -</div>
 </div>
-
 <div id="home"><div class="wrap">
-<div class="idCard">
-<div class="idAvatar">OM</div>
-<div><div style="font-weight:900;letter-spacing:1px">OLIVER MARSHAL</div><div style="font-size:10px;opacity:.7">ID: SP-32 • LEVEL 4 • OWNER</div><div class="danger"><div class="bar on"></div><div class="bar off"></div><span>OWNER ACCESS</span></div></div>
-<div class="stamp">CLASSIFIED</div>
-</div>
-<h1 style="text-align:center;margin:10px 0 14px;background:linear-gradient(90deg,#3a5bff,#c9a86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px;font-weight:900">SOLANO POLICE</h1>
+<div class="idCard"><div class="idAvatar">OM</div><div><div style="font-weight:900">OLIVER MARSHAL</div><div style="font-size:10px;opacity:.7">OWNER • ID: SP-32</div></div></div>
+<h1 style="text-align:center;margin:10px 0;background:linear-gradient(90deg,#3a5bff,#c9a86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px;font-weight:900">SOLANO POLICE</h1>
 <div class="card" onclick="nav('haykala')"><div class="card-inner"><b>🏛️ نظام الهيكلة</b></div></div>
 <div class="card" onclick="nav('afriqa')"><div class="card-inner"><b>⚔️ نظام الأفرقة</b></div></div>
 <div class="card" onclick="nav('qawanin')"><div class="card-inner"><b>⚖️ القوانين</b></div></div>
@@ -110,6 +100,7 @@
 
 <script>
 let stack=[],current='home';
+const arabicNames={qawanin:"📜 قوانين الفريق",taalimat:"📋 تعليمات الفريق",mutat:"✅ متطلبات الانضمام",taraqi:"⭐ نظام الترقية",awqat:"⏰ الأوقات والتدريبات"};
 const defaults={
 leaderTop:"Its Federal",
 federal:["Mrr So","Abo Bandar"],
@@ -120,24 +111,34 @@ special:{name:"قائد القوات الخاصة",deps:["الاسم","الاس�
 swat:{name:"قائد SWAT",deps:["الاسم","الاسم"]},
 pfs:{name:"قائد PFS",deps:["الاسم","الاسم"]},
 fto:{name:"قائد FTO",deps:["الاسم","الاسم"]},
-teamSpecial:{intro:"وحدة النخبة - المداهمات والعمليات الخطرة",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني"],qawanin:"القوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
+teamSpecial:{intro:"وحدة النخبة - المداهمات والعمليات الخطرة",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني"],qawanin:"القوانين هنا",taalimat:"التعليمات هنا",mutat:"المتطلبات هنا",taraqi:"الترقية هنا",awqat:"الأوقات هنا"},
 teamSwat:{intro:"وحدة التدخل السريع والاقتحام",leader:"قائد SWAT",deps:["النائب الأول","النائب الثاني"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"تدريبات"},
 teamFTO:{intro:"التدريب والتأهيل للمستجدين",leader:"قائد FTO",deps:["النائب الأول","النائب الثاني"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
 teamPFS:{intro:"حماية الشخصيات والمنشآت",leader:"قائد PFS",deps:["النائب الأول","النائب الثاني"],qawanin:"قوانين",taalimat:"تعليمات",mutat:"متطلبات",taraqi:"ترقية",awqat:"أوقات"},
 internal:"الداخلية",external:"الخارجية",vacation:"الإجازات",warnings:"التحذيرات",violations:"المخالفات"
 };
-function enterSite(){document.getElementById('entrance').style.transform='scale(1.2)';document.getElementById('entrance').style.opacity='0';setTimeout(()=>document.getElementById('entrance').style.display='none',900);}
+function enterSite(){document.getElementById('entrance').style.opacity='0';setTimeout(()=>document.getElementById('entrance').style.display='none',800);}
 function nav(id){stack.push(current);current=id;document.getElementById('home').style.display='none';document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';render(id);}
 function goBack(){document.querySelectorAll('.page').forEach(p=>p.style.display='none');let prev=stack.pop()||'home';current=prev;if(prev==='home')document.getElementById('home').style.display='block';else{document.getElementById(prev).style.display='block';render(prev);}}
-function render(id){let data=JSON.parse(localStorage.getItem('solano_beauty')||'null')||defaults;
+function render(id){let data=JSON.parse(localStorage.getItem('solano_final_fixed')||'null')||defaults;
 if(id==='leaderTop')document.getElementById('c-leaderTop').innerText=data.leaderTop||defaults.leaderTop;
 if(id==='federal')document.getElementById('c-federal').innerHTML=(data.federal||defaults.federal).map(n=>`<div class="card"><div class="card-inner">⭐ ${n}</div></div>`).join('');
-if(defaults[id]?.name&&!id.startsWith('team')&&id!=='federal'&&id!=='leaderTop'){let o=data[id]||defaults[id];document.getElementById('t-'+id).innerText=o.name;document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:linear-gradient(180deg,rgba(201,168,106,.18),rgba(255,255,255,.05));border:1px solid rgba(201,168,106,.35)"><b style="font-size:20px;color:#c9a86a">${o.name}</b><div style="font-size:11px;opacity:.7;margin-top:4px">القائد</div></div></div>`+o.deps.map(d=>`<div class="card"><div class="card-inner">• ${d}</div></div>`).join('');}
-if(id.startsWith('team')){let o=data[id]||defaults[id];let html=`<div class="card"><div class="card-inner" style="background:linear-gradient(135deg,rgba(45,107,255,.15),rgba(18,28,62,.9));border:1px solid rgba(45,107,255,.3)"><div style="display:flex;justify-content:space-between"><b>📖 تعريف الفريق</b><span class="stamp" style="position:static;transform:none">UNIT</span></div><div style="margin-top:8px;line-height:1.8">${o.intro}</div><div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)"><b>👑 القائد: ${o.leader}</b><div style="margin-top:6px;font-size:13px">${o.deps.map(d=>`▸ ${d}`).join('<br>')}</div><div class="sig">Approved by Oliver Marshal</div></div></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(k=>{if(o[k])html+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">📄 ${k}</div></div>`});document.getElementById('c-'+id).innerHTML=html;}
-if(['internal','external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];}
-function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_beauty')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
-function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_beauty')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد (اسم فقط)</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`}else if(k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${s}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
-function saveAll(){let data={};data.leaderTop=document.getElementById('a_leaderTop').value;data.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim());Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){let e=document.getElementById(`a_${k}_n`);if(e)data[k]={name:e.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value]}}else if(k.startsWith('team')){data[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value]};['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_beauty',JSON.stringify(data));alert('تم ✅');location.reload();}
+if(defaults[id]?.name&&!id.startsWith('team')&&id!=='federal'&&id!=='leaderTop'){let o=data[id]||defaults[id];document.getElementById('t-'+id).innerText=o.name;document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:rgba(201,168,106,.15);border:1px solid rgba(201,168,106,.3)"><b style="color:#c9a86a">${o.name}</b></div></div>`+o.deps.map(d=>`<div class="card"><div class="card-inner">• ${d}</div></div>`).join('');}
+if(id.startsWith('team')){
+let o=data[id]||defaults[id];
+let html=`<div class="card"><div class="card-inner" style="background:linear-gradient(135deg,rgba(45,107,255,.15),rgba(18,28,62,.9));border:1px solid rgba(45,107,255,.3)">
+<div><b>📖 تعريف الفريق</b></div><div style="margin-top:8px;line-height:1.8">${o.intro}</div>
+<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)"><b>👑 القائد: ${o.leader}</b><div style="margin-top:6px">${o.deps.map(d=>`▸ ${d}`).join('<br>')}</div><div class="sig">Approved by Oliver Marshal</div></div></div></div>`;
+['qawanin','taalimat','mutat','taraqi','awqat'].forEach(k=>{
+if(o[k]) html+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">${arabicNames[k]||k}</div></div>`;
+});
+document.getElementById('c-'+id).innerHTML=html;
+}
+if(['internal','external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];
+}
+function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_final_fixed')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=arabicNames[k]||k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
+function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_final_fixed')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`}else if(k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${arabicNames[s]}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
+function saveAll(){let data={};data.leaderTop=document.getElementById('a_leaderTop').value;data.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim());Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){let e=document.getElementById(`a_${k}_n`);if(e)data[k]={name:e.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value]}}else if(k.startsWith('team')){data[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value]};['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_final_fixed',JSON.stringify(data));alert('تم ✅');location.reload();}
 </script>
 </body>
 </html>
