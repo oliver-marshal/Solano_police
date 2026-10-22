@@ -2,44 +2,83 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SOLANO POLICE - نظام شامل</title>
+<title>SOLANO POLICE - AUTO SAVE</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:#050a1f;color:#fff;overflow-x:hidden}
-.bg{position:fixed;inset:0;z-index:-4;background:radial-gradient(800px at 10% 0%,#1230a0aa,transparent),linear-gradient(#070b1e,#040612)}
-.news{position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#0a1a4a,#1a3a8a);color:#c9a86a;padding:5px 0;z-index:9998;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:2px;border-bottom:1px solid rgba(201,168,106,.3)}
+.bg{position:fixed;inset:0;z-index:-4;background:#050a1f}
+.news{position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#0a1a4a,#1a3a8a);color:#c9a86a;padding:5px 0;z-index:9998;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:2px}
 .news span{display:inline-block;animation:ns 25s linear infinite}
 @keyframes ns{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
 .wrap{max-width:700px;margin:32px auto 20px;padding:14px}
-.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.25s}
-.card:hover{border-color:#c9a86a;transform:translateY(-2px)}
+.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.2s}
+.card:hover{border-color:#c9a86a}
 .card-inner{padding:16px}
 .page{display:none}.back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 16px;border-radius:8px;margin-bottom:12px;cursor:pointer;font-weight:800}
 .input,textarea{width:100%;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px;color:#fff;margin-top:6px}
 .btn{width:100%;background:#2d6bff;border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;margin-top:10px;cursor:pointer}
+.btnGold{background:linear-gradient(90deg,#c9a86a,#8c6d3a);color:#000}
 .law-num{background:linear-gradient(135deg,#c9a86a,#8c6d3a);color:#000;font-weight:900;width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-left:8px;font-size:14px}
-.law-pun{background:rgba(255,42,42,.15);border:1px solid rgba(255,42,42,.3);color:#ff8a8a;padding:6px 10px;border-radius:8px;margin-top:10px;font-size:11px;line-height:1.6}
-.oq-note{background:linear-gradient(135deg,rgba(255,42,42,.3),rgba(255,200,0,.2));border:2px solid rgba(255,42,42,.6);border-radius:14px;padding:16px;margin-top:20px;text-align:center;font-weight:900;color:#ffeb88;font-size:18px;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-#entrance{position:fixed;inset:0;z-index:99999;background:radial-gradient(700px at 50% -10%,#1a2f9a,transparent),linear-gradient(180deg,#070d2a,#000);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.2s}
-.badge{width:122px;height:122px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 55px rgba(201,168,106,.55);animation:fl 3s ease-in-out infinite}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
-.badge b{font-size:50px;color:#000}.badge span{font-size:9px;letter-spacing:3px;color:#000;font-weight:900}
-.title{font-size:44px;font-weight:900;letter-spacing:5px;margin-top:16px}.sub{letter-spacing:7px;font-size:11px;color:#c9a86a}
-.line{width:270px;height:1px;background:linear-gradient(90deg,transparent,#c9a86a,transparent);margin:16px 0}
-.owner{font-size:11px;color:#8a94b3;text-align:center}
-.enterBtn{margin-top:22px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:14px 46px;border-radius:99px;color:#000;font-weight:900;letter-spacing:2px;cursor:pointer}
+.law-pun{background:rgba(255,42,42,.15);border:1px solid rgba(255,42,42,.3);color:#ff8a8a;padding:6px 10px;border-radius:8px;margin-top:10px;font-size:11px}
+
+/* دخولية متوازنة - الصورة تبين */
+#entrance{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:70px 20px 35px;background-color:#070d2a;background-image:linear-gradient(to bottom, rgba(5,10,31,.35) 0%, rgba(5,10,31,0) 30%, rgba(5,10,31,0) 70%, rgba(5,10,31,.9) 100%), url('entrance.jpg');background-repeat:no-repeat;background-position:center center;background-size:contain;transition:1s}
+@media (min-width:769px){#entrance{background-size:cover}}
+#entrance::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,10,31,.4) 0%,rgba(5,10,31,0) 30%,rgba(5,10,31,0) 65%,rgba(5,10,31,.85) 100%);z-index:1}
+#entrance>*{position:relative;z-index:2}
+.badge{width:88px;height:88px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:18px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 30px rgba(201,168,106,.4)}
+.badge b{font-size:38px;color:#000}.badge span{font-size:7px;letter-spacing:2px;color:#000;font-weight:900}
+.title{font-size:34px;font-weight:900;letter-spacing:3px;text-shadow:0 2px 20px #000}.sub{letter-spacing:5px;font-size:10px;color:#c9a86a;margin-top:8px}
+.line{width:200px;height:1px;background:linear-gradient(90deg,transparent,#c9a86a,transparent);margin:12px 0}
+.owner{font-size:11px;color:#a0a8c0;text-align:center}
+.enterBtn{margin-top:16px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:13px 36px;border-radius:99px;color:#000;font-weight:900;cursor:pointer;box-shadow:0 0 20px rgba(201,168,106,.4)}
 .idCard{background:linear-gradient(135deg,#0e1e4a,#1c3a8a);border:1px solid rgba(201,168,106,.35);border-radius:14px;padding:12px;display:flex;gap:12px;align-items:center;margin-bottom:14px}
 .idAvatar{width:48px;height:48px;background:linear-gradient(135deg,#c9a86a,#8c6d3a);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900}
 </style>
 </head>
 <body>
 <div class="bg"></div>
-<div class="news"><span>★ SOLANO POLICE DEPARTMENT • OLIVER MARSHAL • SYSTEM OWNER • ★</span></div>
-<div id="entrance"><div class="badge"><b>★</b><span>POLICE</span><span style="font-size:7px">SOLANO</span></div><div class="title">SOLANO POLICE</div><div class="sub">DEPARTMENT • EST. 1921</div><div class="line"></div><div class="owner">OLIVER MARSHAL<br>SYSTEM OWNER</div><button class="enterBtn" onclick="enterSite()">دخول النظام →</button></div>
-<div id="home"><div class="wrap"><div class="idCard"><div class="idAvatar">OM</div><div><div style="font-weight:900">OLIVER MARSHAL</div><div style="font-size:10px;opacity:.7">OWNER • ID: SP-32 • LEVEL 4</div></div></div><h1 style="text-align:center;margin:10px 0;background:linear-gradient(90deg,#3a5bff,#c9a86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px;font-weight:900">SOLANO POLICE</h1><div class="card" onclick="nav('haykala')"><div class="card-inner"><b>🏛️ نظام الهيكلة</b></div></div><div class="card" onclick="nav('afriqa')"><div class="card-inner"><b>⚔️ نظام الأفرقة</b></div></div><div class="card" onclick="nav('qawanin')"><div class="card-inner"><b>⚖️ القوانين</b></div></div><div class="card" onclick="nav('micro')"><div class="card-inner"><b>🎙️ المايكرو</b></div></div><div style="text-align:center;margin-top:10px"><button onclick="openAdmin()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#8a94b3;padding:8px 18px;border-radius:99px;cursor:pointer">🔒 ادمن</button></div></div></div>
-<div id="haykala" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🏛️ الهيكلة</h2><div class="card" onclick="nav('leaderTop')"><div class="card-inner">👑 القائد</div></div><div class="card" onclick="nav('federal')"><div class="card-inner">⭐ النواب الفيدراليون</div></div><div class="card" onclick="nav('irshad')"><div class="card-inner">📘 قائد الإرشاد</div></div><div class="card" onclick="nav('muqablat')"><div class="card-inner">🎤 قائد المقابلات</div></div><div class="card" onclick="nav('faalyat')"><div class="card-inner">🎉 قائد الفعاليات</div></div><div class="card" onclick="nav('special')"><div class="card-inner">⚔️ قائد القوات الخاصة</div></div><div class="card" onclick="nav('swat')"><div class="card-inner">🚨 قائد SWAT</div></div><div class="card" onclick="nav('pfs')"><div class="card-inner">🛡️ قائد PFS</div></div><div class="card" onclick="nav('fto')"><div class="card-inner">🎓 قائد FTO</div></div></div></div>
-<div id="afriqa" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>⚔️ الأفرقة</h2><div class="card" onclick="nav('teamSpecial')"><div class="card-inner">أ- القوات الخاصة</div></div><div class="card" onclick="nav('teamSwat')"><div class="card-inner">ب- SWAT</div></div><div class="card" onclick="nav('teamFTO')"><div class="card-inner">ج- FTO</div></div><div class="card" onclick="nav('teamPFS')"><div class="card-inner">د- PFS</div></div></div></div>
+<div class="news"><span>★ SOLANO POLICE DEPARTMENT • OLIVER MARSHAL • IT'S FEDERAL • ABO BANDAR • MRR SO • ★</span></div>
+<div id="entrance">
+<div class="badge"><b>★</b><span>POLICE</span><span>SOLANO</span></div>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:column;align-items:center;width:100%">
+<div class="title">SOLANO POLICE</div>
+<div class="sub">DEPARTMENT • EST. 1921</div>
+<div class="line"></div>
+<div class="owner">OLIVER MARSHAL<br>SYSTEM OWNER</div>
+<button class="enterBtn" onclick="enterSite()">دخول النظام →</button>
+</div>
+</div>
+<div id="home"><div class="wrap">
+<div class="idCard"><div class="idAvatar">OM</div><div><div style="font-weight:900">OLIVER MARSHAL</div><div style="font-size:10px;opacity:.7">OWNER • ID: SP-32 • AUTO SAVE</div></div></div>
+<h1 style="text-align:center;margin:10px 0;background:linear-gradient(90deg,#3a5bff,#c9a86a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:36px;font-weight:900">SOLANO POLICE</h1>
+<div class="card" onclick="nav('haykala')"><div class="card-inner"><b>🏛️ نظام الهيكلة</b></div></div>
+<div class="card" onclick="nav('afriqa')"><div class="card-inner"><b>⚔️ نظام الأفرقة</b></div></div>
+<div class="card" onclick="nav('qawanin')"><div class="card-inner"><b>⚖️ القوانين</b></div></div>
+<div class="card" onclick="nav('micro')"><div class="card-inner"><b>🎙️ المايكرو</b></div></div>
+<div style="text-align:center;margin-top:10px"><button onclick="openAdmin()" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#8a94b3;padding:8px 18px;border-radius:99px;cursor:pointer">🔒 ادمن - حفظ تلقائي للكل</button></div>
+</div></div>
+
+<div id="haykala" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🏛️ الهيكلة</h2>
+<div class="card" onclick="nav('leaderTop')"><div class="card-inner">👑 القائد</div></div>
+<div class="card" onclick="nav('federal')"><div class="card-inner">⭐ النواب الفيدراليون</div></div>
+<div class="card" onclick="nav('irshad')"><div class="card-inner">📘 قائد الإرشاد</div></div>
+<div class="card" onclick="nav('muqablat')"><div class="card-inner">🎤 قائد المقابلات</div></div>
+<div class="card" onclick="nav('faalyat')"><div class="card-inner">🎉 قائد الفعاليات</div></div>
+<div class="card" onclick="nav('special')"><div class="card-inner">⚔️ قائد القوات الخاصة</div></div>
+<div class="card" onclick="nav('swat')"><div class="card-inner">🚨 قائد SWAT</div></div>
+<div class="card" onclick="nav('pfs')"><div class="card-inner">🛡️ قائد PFS</div></div>
+<div class="card" onclick="nav('fto')"><div class="card-inner">🎓 قائد FTO</div></div>
+</div></div>
+
+<div id="afriqa" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>⚔️ الأفرقة</h2>
+<div class="card" onclick="nav('teamSpecial')"><div class="card-inner">أ- القوات الخاصة</div></div>
+<div class="card" onclick="nav('teamSwat')"><div class="card-inner">ب- SWAT</div></div>
+<div class="card" onclick="nav('teamFTO')"><div class="card-inner">ج- FTO</div></div>
+<div class="card" onclick="nav('teamPFS')"><div class="card-inner">د- PFS</div></div>
+</div></div>
+
 <div id="leaderTop" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>القائد</h2><div class="card"><div class="card-inner" id="c-leaderTop" style="text-align:center;font-size:26px;font-weight:900;color:#c9a86a"></div></div></div></div>
 <div id="federal" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>النواب الفيدراليون</h2><div id="c-federal"></div></div></div>
 <div id="irshad" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="t-irshad"></h2><div id="c-irshad"></div></div></div>
@@ -53,28 +92,30 @@
 <div id="teamSwat" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>ب- SWAT</h2><div id="c-teamSwat"></div></div></div>
 <div id="teamFTO" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>ج- FTO</h2><div id="c-teamFTO"></div></div></div>
 <div id="teamPFS" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>د- PFS</h2><div id="c-teamPFS"></div></div></div>
-<div id="qawanin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card" onclick="nav('internal')"><div class="card-inner">📘 الداخلية</div></div><div class="card" onclick="nav('external')"><div class="card-inner">🌐 الخارجية</div></div><div class="card" onclick="nav('vacation')"><div class="card-inner">🏖️ الإجازات</div></div></div></div>
-<div id="micro" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 style="margin-bottom:14px">🎙️ المايكرو</h2><div class="card" onclick="nav('warnings')"><div class="card-inner">⚠️ التحذيرات</div></div><div class="card" onclick="nav('violations')"><div class="card-inner">🚫 المخالفات - العقوبات</div></div></div></div>
-<div id="violations" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 style="margin-bottom:14px">🚫 المخالفات</h2>
-<div class="card" onclick="nav('jinayah')"><div class="card-inner"><b>1️⃣ مخالفات الجناية</b></div></div>
-<div class="card" onclick="nav('intihakat')"><div class="card-inner"><b>2️⃣ مخالفات الانتهاكات</b></div></div>
-<div class="card" onclick="nav('junha')"><div class="card-inner"><b>3️⃣ مخالفات الجنحة</b></div></div>
-<div class="oq-note">⚠️ هل فهمت سبب اعتقالك !!! ⚠️</div>
-</div></div>
-<div id="jinayah" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>1️⃣ مخالفات الجناية</h2><div id="c-jinayah"></div><div class="oq-note">❓ هل فهمت سبب اعتقالك !!!</div></div></div>
-<div id="intihakat" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>2️⃣ مخالفات الانتهاكات</h2><div id="c-intihakat"></div><div class="oq-note">❓ هل فهمت سبب اعتقالك !!!</div></div></div>
-<div id="junha" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>3️⃣ مخالفات الجنحة</h2><div id="c-junha"></div><div class="oq-note">❓ هل فهمت سبب اعتقالك !!!</div></div></div>
-<div id="internal" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>📘 القوانين الداخلية</h2><div id="c-internal"></div></div></div>
+<div id="qawanin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card" onclick="nav('internal')"><div class="card-inner">📘 الداخلية - 23 قانون</div></div><div class="card" onclick="nav('external')"><div class="card-inner">🌐 الخارجية</div></div><div class="card" onclick="nav('vacation')"><div class="card-inner">🏖️ الإجازات</div></div></div></div>
+<div id="micro" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card" onclick="nav('warnings')"><div class="card-inner">⚠️ التحذيرات</div></div><div class="card" onclick="nav('violations')"><div class="card-inner">🚫 المخالفات</div></div></div></div>
+<div id="internal" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>📘 القوانين الداخلية - 23 قانون</h2><div id="c-internal"></div></div></div>
 <div id="external" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-external" style="white-space:pre-wrap"></div></div></div></div>
 <div id="vacation" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-vacation" style="white-space:pre-wrap"></div></div></div></div>
 <div id="warnings" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-warnings" style="white-space:pre-wrap"></div></div></div></div>
+<div id="violations" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-violations" style="white-space:pre-wrap"></div></div></div></div>
 <div id="subPage" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="subTitle"></h2><div class="card"><div class="card-inner" id="subText" style="white-space:pre-wrap"></div></div></div></div>
-<div id="admin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>لوحة التحكم الشاملة</h2><div id="adminInputs"></div><button class="btn" onclick="saveAll()">💾 حفظ شامل</button></div></div>
+
+<div id="admin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🔒 حفظ تلقائي للكل</h2>
+<div class="card"><div class="card-inner" style="background:rgba(255,42,42,.15);border:1px solid rgba(255,42,42,.3)">
+<b>🔑 GitHub Token (احفظه هنا مرة وحدة - لا ترسله لأحد)</b>
+<input id="gh_token" class="input" placeholder="ghp_xxxx" type="password">
+<div style="font-size:10px;margin-top:6px;opacity:.7">التوكن يبقى في جهازك فقط</div>
+</div></div>
+<div id="adminInputs"></div>
+<button class="btn btnGold" onclick="saveAuto()">💾 حفظ تلقائي للكل (GitHub)</button>
+<div id="saveStatus" style="text-align:center;margin-top:10px;font-size:12px"></div>
+</div></div>
+
 <script>
 let stack=[],current='home';
 const arabicNames={qawanin:"📜 قوانين الفريق",taalimat:"📋 تعليمات الفريق",mutat:"📝 متطلبات الترقية",taraqi:"⭐ نظام الترقية",awqat:"⏰ الأوقات والتدريبات"};
-
-let internalLaws = JSON.parse(localStorage.getItem('solano_internal')||'null') || [
+const internalLaws=[
 {title:"الصعود للطابق الثاني",text:"يمنع منعًا باتًا الصعود إلى الطابق الثاني أو التواجد فيه دون إذن مسبق.",pun:"العقوبة: (توبيخ / تحذير / فصل) حسب قرار القائد."},
 {title:"مكتب القائد",text:"يمنع دخول أو التواجد عند مكتب القائد دون إذن مسبق أو استدعاء رسمي.",pun:"العقوبة: (توبيخ / تحذير / فصل) حسب قرار القائد."},
 {title:"تواجد المجازين",text:"يمنع على المجازين البقاء داخل المركز لأكثر من (3) دقائق إلا إذا تم استدعاؤهم من القائد أو النواب.",pun:"العقوبة: توبيخ واحد."},
@@ -83,51 +124,22 @@ let internalLaws = JSON.parse(localStorage.getItem('solano_internal')||'null') |
 {title:"اللاسلكي وراديو الشرطة",text:"يمنع استخدام راديو الشرطة أو قنوات الاتصال للمزاح.",pun:"العقوبة: توبيخ واحد."},
 {title:"راديو الفصائل",text:"يمنع استخدام راديو الفصائل دون الرتبة (9).",pun:"العقوبة: توبيخ واحد."},
 {title:"شات التجارة",text:"يمنع الكتابة في شات التجارة إلا للبيع أو الشراء فقط.",pun:"العقوبة: توبيخ واحد."},
-{title:"مراسلة القيادة بالخاص",text:"يمنع مراسلة قائد الشرطة أو النواب عبر الخاص في أمور غير رسمية.",pun:"العقوبة: توبيخ واحد."},
+{title:"مراسلة القيادة بالخاص",text:"يمنع مراسلة القائد أو النواب بالخاص دون سبب طارئ.",pun:"العقوبة: توبيخ واحد."},
 {title:"طلب الترقية عبر الاتصال",text:"يمنع طلب الترقية عبر الراديو أو الخاص.",pun:"العقوبة: توبيخ واحد."},
 {title:"طلب الترقية المباشر",text:"يمنع طلب الترقية مباشرة من القائد والنواب.",pun:"العقوبة: توبيخ واحد."},
-{title:"استخدام الأسلحة والصاعق",text:"يمنع استخدام الصاعق أو الأسلحة النارية بدون سبب رسمي.",pun:"العقوبة: (توبيخ / تحذير / فصل) حسب قرار القائد."},
+{title:"استخدام الأسلحة والصاعق",text:"يمنع استخدام الصاعق أو الأسلحة بدون سبب رسمي.",pun:"العقوبة: (توبيخ / تحذير / فصل)."},
 {title:"حمل السلاح داخل المركز",text:"يمنع حمل السلاح داخل المركز بدون سبب رسمي.",pun:"العقوبة: توبيخ واحد."},
 {title:"الاعتداء الجسدي",text:"يمنع الاعتداء الجسدي بين الضباط.",pun:"العقوبة: توبيخ واحد."},
-{title:"الاعتقال والتوقيف",text:"يمنع على الرتبتين (0) و(1) اعتقال أو توقيف المواطنين.",pun:"العقوبة: توبيخ واحد."},
-{title:"مخاطبة الرتب العليا",text:"يُلزم جميع الضباط بمخاطبة الرتب العليا بكلمة (سيد / سيدة).",pun:"العقوبة: توبيخ واحد."},
-{title:"الرقص والأغاني",text:"يمنع الرقص أثناء الاجتماعات أو تشغيل الأغاني في المركز.",pun:"العقوبة: توبيخ واحد."},
+{title:"الاعتقال والتوقيف",text:"يمنع على الرتبتين (0) و(1) اعتقال المواطنين.",pun:"العقوبة: توبيخ واحد."},
+{title:"مخاطبة الرتب العليا",text:"يُلزم مخاطبة الرتب العليا بكلمة (سيد / سيدة).",pun:"العقوبة: توبيخ واحد."},
+{title:"الرقص والأغاني",text:"يمنع الرقص أثناء الاجتماعات أو تشغيل الأغاني.",pun:"العقوبة: توبيخ واحد."},
 {title:"المقابلات الرسمية",text:"يجب حضور الرتب من (5) إلى (9) وقت المقابلات.",pun:"العقوبة: تحذير أو توبيخ."},
-{title:"التقارير الأسبوعية",text:"عدم إنزال التقرير الأسبوعي من الرتب (6/7/8/9/10/11) يوم الجمعة.",pun:"العقوبة: تحذير."},
+{title:"التقارير الأسبوعية",text:"عدم إنزال التقرير الأسبوعي من الرتب (6-11) يوم الجمعة.",pun:"العقوبة: تحذير."},
 {title:"التقصير في المهام",text:"التقصير في مهام الفريق لرتب (8/9/10).",pun:"العقوبة: تحذير."},
 {title:"شكاوى الزملاء",text:"يمنع الشكوى على الزملاء دون دليل فيديو واضح.",pun:"العقوبة: توبيخ واحد."},
-{title:"الأدلة غير الواضحة",text:"أي مقطع فيديو غير واضح.",pun:"العقوبة: سيتم رفضه."},
+{title:"الأدلة غير الواضحة",text:"أي مقطع فيديو كدليل غير واضح.",pun:"العقوبة: سيتم رفضه."},
 {title:"صلاحية المتطلبات",text:"أي متطلب يتجاوز أسبوعين.",pun:"العقوبة: سيتم رفضه."}
 ];
-
-const oqobatData = {
-jinayah: [
-{title:"القتل العمد"},
-{title:"الخطف والاحتجاز القسري"},
-{title:"السطو المسلح على بنك"},
-{title:"الاعتداء على عسكري"},
-{title:"تهريب ممنوعات كبرى"},
-{title:"التزوير وانتحال صفة عسكرية"}
-],
-intihakat: [
-{title:"الهروب من نقطة تفتيش"},
-{title:"عدم الانصياع لأوامر الشرطة"},
-{title:"التعدي اللفظي على عسكري"},
-{title:"التجمهر غير القانوني"},
-{title:"إعاقة عمل الشرطة"},
-{title:"حمل سلاح بدون ترخيص"}
-],
-junha: [
-{title:"مخالفة مرورية خطيرة"},
-{title:"السرعة الزائدة"},
-{title:"وقوف خاطئ"},
-{title:"عدم ارتداء حزام"},
-{title:"استخدام الجوال أثناء القيادة"},
-{title:"إزعاج عام"},
-{title:"التواجد في منطقة محظورة"}
-]
-};
-
 const defaults={
 leaderTop:"It's Federal",
 federal:["Mrr So","Abo Bandar"],
@@ -138,79 +150,119 @@ special:{name:"قائد القوات الخاصة",deps:["الاسم","الاس�
 swat:{name:"قائد SWAT",deps:["الاسم","الاسم"]},
 pfs:{name:"قائد PFS",deps:["الاسم","الاسم"]},
 fto:{name:"قائد FTO",deps:["الاسم","الاسم"]},
-teamSpecial:{intro:"وحدة النخبة - المداهمات والعمليات الخطرة",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين القوات الخاصة",taalimat:"تعليمات القوات الخاصة",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات التدريب"},
-teamSwat:{intro:"وحدة التدخل السريع والاقتحام",leader:"قائد SWAT",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين SWAT",taalimat:"تعليمات SWAT",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"تدريبات SWAT"},
-teamFTO:{intro:"التدريب والتأهيل للمستجدين",leader:"قائد FTO",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين FTO",taalimat:"تعليمات FTO",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات FTO"},
-teamPFS:{intro:"حماية الشخصيات والمنشآت",leader:"قائد PFS",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين PFS",taalimat:"تعليمات PFS",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات PFS"},
-external:"الخارجية",vacation:"الإجازات",warnings:"التحذيرات"
+teamSpecial:{intro:"وحدة النخبة - المداهمات",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين القوات الخاصة",taalimat:"تعليمات القوات الخاصة",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات التدريب"},
+teamSwat:{intro:"وحدة التدخل السريع",leader:"قائد SWAT",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين SWAT",taalimat:"تعليمات SWAT",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"تدريبات SWAT"},
+teamFTO:{intro:"التدريب والتأهيل",leader:"قائد FTO",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين FTO",taalimat:"تعليمات FTO",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات FTO"},
+teamPFS:{intro:"حماية الشخصيات",leader:"قائد PFS",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين PFS",taalimat:"تعليمات PFS",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات PFS"},
+external:"القوانين الخارجية",vacation:"نظام الإجازات",warnings:"نظام التحذيرات",violations:"نظام المخالفات"
 };
+
+let currentData = {...defaults};
+
+async function loadData(){
+try{
+let r=await fetch('data.json?v='+Date.now());
+if(r.ok){
+let j=await r.json();
+currentData={...defaults,...j};
+console.log("loaded from data.json");
+}else{
+currentData={...defaults};
+}
+}catch(e){currentData={...defaults};}
+renderAll();
+}
 
 function enterSite(){document.getElementById('entrance').style.opacity='0';setTimeout(()=>document.getElementById('entrance').style.display='none',800);}
 function nav(id){stack.push(current);current=id;document.getElementById('home').style.display='none';document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';render(id);}
 function goBack(){document.querySelectorAll('.page').forEach(p=>p.style.display='none');let prev=stack.pop()||'home';current=prev;if(prev==='home')document.getElementById('home').style.display='block';else{document.getElementById(prev).style.display='block';render(prev);}}
 
-function renderOqobatList(type, elementId){
-  let data = JSON.parse(localStorage.getItem('solano_oqobat')||'null') || oqobatData;
-  let list = data[type] || oqobatData[type];
-  let html = list.map((o,i)=>`<div class="card"><div class="card-inner"><div><span class="law-num">${i+1}</span><b>${o.title}</b></div></div></div>`).join('');
-  document.getElementById(elementId).innerHTML = html;
-}
-
+function renderAll(){render('leaderTop');render('federal');}
 function render(id){
-  let data=JSON.parse(localStorage.getItem('solano_clean_final')||'null')||defaults;
-  if(id==='leaderTop')document.getElementById('c-leaderTop').innerText=data.leaderTop||defaults.leaderTop;
-  if(id==='federal')document.getElementById('c-federal').innerHTML=(data.federal||defaults.federal).map(n=>`<div class="card"><div class="card-inner">⭐ ${n}</div></div>`).join('');
-  if(defaults[id]?.name&&!id.startsWith('team')&&id!=='federal'&&id!=='leaderTop'){
-    let o=data[id]||defaults[id];
-    document.getElementById('t-'+id).innerText=o.name;
-    document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:rgba(201,168,106,.15);border-radius:10px;padding:12px"><b>${o.name}</b></div></div>` + (o.deps||[]).map(d=>`<div class="card"><div class="card-inner">👤 ${d}</div></div>`).join('');
-  }
-  if(id.startsWith('team')){
-    let t=data[id]||defaults[id];
-    document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner"><b>وصف الفريق:</b> ${t.intro}</div></div>`+
-    `<div class="card"><div class="card-inner"><b>القائد:</b> ${t.leader}</div></div>`+
-    (t.deps||[]).map(d=>`<div class="card"><div class="card-inner">👤 ${d}</div></div>`).join('')+
-    Object.keys(arabicNames).map(k=>`<div class="card" onclick="openSub('${id}_${k}','${arabicNames[k]}','${t[k]||k}')"><div class="card-inner">📄 ${arabicNames[k]}</div></div>`).join('');
-  }
-  if(id==='internal')document.getElementById('c-internal').innerHTML=internalLaws.map((l,i)=>`<div class="card"><div class="card-inner"><div><span class="law-num">${i+1}</span><b>${l.title}</b></div><div style="margin-top:8px;font-size:13px;color:#d0d8ef">${l.text}</div><div class="law-pun">${l.pun}</div></div></div>`).join('');
-  if(id==='external')document.getElementById('c-external').innerText=data.external||defaults.external;
-  if(id==='vacation')document.getElementById('c-vacation').innerText=data.vacation||defaults.vacation;
-  if(id==='warnings')document.getElementById('c-warnings').innerText=data.warnings||defaults.warnings;
-  if(id==='jinayah')renderOqobatList('jinayah','c-jinayah');
-  if(id==='intihakat')renderOqobatList('intihakat','c-intihakat');
-  if(id==='junha')renderOqobatList('junha','c-junha');
+let data=currentData;
+if(id==='leaderTop')document.getElementById('c-leaderTop').innerText=data.leaderTop||defaults.leaderTop;
+if(id==='federal')document.getElementById('c-federal').innerHTML=(data.federal||defaults.federal).map(n=>`<div class="card"><div class="card-inner">⭐ ${n}</div></div>`).join('');
+if(defaults[id]?.name&&!id.startsWith('team')&&id!=='federal'&&id!=='leaderTop'){let o=data[id]||defaults[id];document.getElementById('t-'+id).innerText=o.name;document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:rgba(201,168,106,.15);border:1px solid rgba(201,168,106,.3)"><b style="color:#c9a86a">${o.name}</b></div></div>`+o.deps.map(d=>`<div class="card"><div class="card-inner">• ${d}</div></div>`).join('');}
+if(id.startsWith('team')){
+let o=data[id]||defaults[id];
+let html=`<div class="card"><div class="card-inner" style="background:linear-gradient(135deg,rgba(45,107,255,.15),rgba(18,28,62,.9));border:1px solid rgba(45,107,255,.3)"><div><b>📖 تعريف</b></div><div style="margin-top:8px">${o.intro}</div><div style="margin-top:12px;border-top:1px solid rgba(255,255,255,.1);padding-top:12px"><b>👑 ${o.leader}</b><div style="margin-top:8px">${o.deps.map((d,i)=>`▸ النائب ${i+1}: ${d}`).join('<br>')}</div></div></div></div>`;
+['qawanin','taalimat','mutat','taraqi','awqat'].forEach(k=>{if(o[k]) html+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">${arabicNames[k]||k}</div></div>`;});
+document.getElementById('c-'+id).innerHTML=html;
+}
+if(id==='internal'){let html='';internalLaws.forEach((law,i)=>{html+=`<div class="card"><div class="card-inner"><div><span class="law-num">${i+1}</span><b>${law.title}</b></div><div style="margin-top:8px;opacity:.9">${law.text}</div><div class="law-pun">⚖️ ${law.pun}</div></div></div>`;});document.getElementById('c-internal').innerHTML=html;}
+if(['external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];
 }
 
-function openSub(key,title,text){
-  document.getElementById('subTitle').innerText=title;
-  document.getElementById('subText').innerText=text;
-  nav('subPage');
-}
+function openSub(team,k){stack.push(current);current='subPage';let d=currentData;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=arabicNames[k]||k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
 
 function openAdmin(){
-  let data=JSON.parse(localStorage.getItem('solano_clean_final')||'null')||defaults;
-  let html=`
-    <div class="card"><div class="card-inner">
-      <label>اسم القائد:</label>
-      <input class="input" id="adm-leaderTop" value="${data.leaderTop||defaults.leaderTop}">
-    </div></div>
-    <div class="card"><div class="card-inner">
-      <label>النواب الفيدراليون (مفصولين بفاصلة):</label>
-      <input class="input" id="adm-federal" value="${(data.federal||defaults.federal).join(', ')}">
-    </div></div>
-  `;
-  document.getElementById('adminInputs').innerHTML=html;
-  nav('admin');
+let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}
+nav('admin');
+document.getElementById('gh_token').value=localStorage.getItem('gh_token')||'';
+let data=currentData;
+let cont=document.getElementById('adminInputs');cont.innerHTML='';
+cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;
+cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;
+Object.keys(defaults).forEach(k=>{
+if(defaults[k].name&&k!=='federal'){
+cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`;
+}else if(k.startsWith('team')){
+cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>3 نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"><input id="a_${k}_d3" class="input" value="${data[k]?.deps[2]||''}"></div></div>`;
+['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{
+cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${arabicNames[s]}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`;
+})
+}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){
+cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`;
+}
+});
 }
 
-function saveAll(){
-  let data=JSON.parse(localStorage.getItem('solano_clean_final')||'null')||defaults;
-  data.leaderTop=document.getElementById('adm-leaderTop').value;
-  data.federal=document.getElementById('adm-federal').value.split(',').map(s=>s.trim()).filter(Boolean);
-  localStorage.setItem('solano_clean_final',JSON.stringify(data));
-  alert('تم الحفظ بنجاح!');
-  goBack();
+async function saveAuto(){
+let token=document.getElementById('gh_token').value.trim();
+if(!token){alert('حط التوكن أولاً - اعمله من github.com/settings/tokens ولا ترسله لأحد');return;}
+localStorage.setItem('gh_token',token);
+let newData={};
+newData.leaderTop=document.getElementById('a_leaderTop').value;
+newData.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim()).filter(s=>s);
+Object.keys(defaults).forEach(k=>{
+if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){
+let e=document.getElementById(`a_${k}_n`);
+if(e) newData[k]={name:e.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value]};
+}else if(k.startsWith('team')){
+newData[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value,document.getElementById(`a_${k}_d3`).value]};
+['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{
+let el=document.getElementById(`a_${k}_${s}`);
+if(el) newData[k][s]=el.value;
+});
+}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){
+let el=document.getElementById(`a_${k}`);
+if(el) newData[k]=el.value;
 }
+});
+document.getElementById('saveStatus').innerText='⏳ جاري الحفظ للكل...';
+try{
+let getRes=await fetch('https://api.github.com/repos/oliver-marshal/Solano_police/contents/data.json',{headers:{Authorization:`token ${token}`}});
+let sha=null;
+if(getRes.ok){let j=await getRes.json();sha=j.sha;}
+let content=btoa(unescape(encodeURIComponent(JSON.stringify(newData,null,2))));
+let putRes=await fetch('https://api.github.com/repos/oliver-marshal/Solano_police/contents/data.json',{
+method:'PUT',
+headers:{Authorization:`token ${token}`,'Content-Type':'application/json'},
+body:JSON.stringify({message:'تحديث تلقائي من لوحة التحكم - '+new Date().toLocaleString(),content:content,sha:sha})
+});
+if(putRes.ok){
+document.getElementById('saveStatus').innerText='✅ تم الحفظ للكل! انتظر دقيقتين ويظهر للجميع';
+setTimeout(()=>location.reload(),2500);
+}else{
+let err=await putRes.text();
+document.getElementById('saveStatus').innerText='❌ خطأ: '+err;
+}
+}catch(e){
+document.getElementById('saveStatus').innerText='❌ خطأ اتصال: '+e.message;
+}
+}
+loadData();
+(function(){let bg=localStorage.getItem('solano_bg_final');if(bg){document.getElementById('entrance').style.backgroundImage=`linear-gradient(to bottom, rgba(5,10,31,.35) 0%, rgba(5,10,31,0) 30%, rgba(5,10,31,0) 70%, rgba(5,10,31,.9) 100%), url('${bg}')`;}})();
 </script>
 </body>
 </html>
