@@ -20,9 +20,15 @@
 .btnGold{background:linear-gradient(90deg,#c9a86a,#8c6d3a);color:#000}
 .law-num{background:linear-gradient(135deg,#c9a86a,#8c6d3a);color:#000;font-weight:900;width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-left:8px;font-size:14px}
 .law-pun{background:rgba(255,42,42,.15);border:1px solid rgba(255,42,42,.3);color:#ff8a8a;padding:6px 10px;border-radius:8px;margin-top:10px;font-size:11px;line-height:1.6}
-#entrance{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.2s;background-size:cover;background-position:center}
-#entrance::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,10,31,.3),rgba(5,10,31,.8));z-index:1}
+
+/* تم التعديل هنا - الصورة كاملة بدون قص */
+#entrance{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.2s;background-color:#050a1f;background-image:linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('entrance.jpg');background-repeat:no-repeat;background-position:center center;background-size:contain}
+@media (min-width:769px){
+#entrance{background-size:cover;background-position:center center}
+}
+#entrance::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,10,31,.15),rgba(5,10,31,.75));z-index:1}
 #entrance>*{position:relative;z-index:2}
+
 .badge{width:122px;height:122px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 55px rgba(201,168,106,.55);animation:fl 3s ease-in-out infinite}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
 .badge b{font-size:50px;color:#000}.badge span{font-size:9px;letter-spacing:3px;color:#000;font-weight:900}
@@ -94,13 +100,13 @@
 <div id="warnings" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-warnings" style="white-space:pre-wrap"></div></div></div></div>
 <div id="violations" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><div class="card"><div class="card-inner" id="c-violations" style="white-space:pre-wrap"></div></div></div></div>
 <div id="subPage" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2 id="subTitle"></h2><div class="card"><div class="card-inner" id="subText" style="white-space:pre-wrap"></div></div></div></div>
-<div id="admin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🔒 لوحة التحكم - كاملة + رفع صورة</h2>
+<div id="admin" class="page"><div class="wrap"><button class="back" onclick="goBack()">← رجوع</button><h2>🔒 لوحة التحكم</h2>
 <div class="card"><div class="card-inner" style="background:rgba(201,168,106,.1);border:1px solid rgba(201,168,106,.3)">
-<b>🖼️ رفع صورة الخلفية (سهل)</b>
+<b>🖼️ رفع صورة الخلفية</b>
 <input type="file" id="bgFile" style="display:none" accept="image/*" onchange="uploadBg(event)">
-<label for="bgFile" class="uploadLabel">📤 اضغط هنا واختار صورة من جوالك</label>
-<div id="bgStatus" style="font-size:11px;margin-top:6px;opacity:.7">لم يتم اختيار صورة</div>
-<button class="btn" style="background:#ff3b3b;margin-top:8px" onclick="removeBg()">🗑️ حذف الخلفية</button>
+<label for="bgFile" class="uploadLabel">📤 اضغط واختار صورة من جوالك</label>
+<div id="bgStatus" style="font-size:11px;margin-top:6px;opacity:.7">الصورة الحالية: entrance.jpg</div>
+<button class="btn" style="background:#ff3b3b;margin-top:8px" onclick="removeBg()">🗑️ حذف الخلفية المؤقتة</button>
 </div></div>
 <div id="adminInputs"></div><button class="btn btnGold" onclick="saveAll()">💾 حفظ كل التعديلات</button></div></div>
 <script>
@@ -183,11 +189,11 @@ document.getElementById('c-internal').innerHTML=html;
 if(['external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];
 }
 function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_full_v2')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=arabicNames[k]||k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
-function uploadBg(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=function(ev){localStorage.setItem('solano_bg_temp',ev.target.result);document.getElementById('entrance').style.backgroundImage=`url('${ev.target.result}')`;document.getElementById('bgStatus').innerText='✅ تم اختيار الصورة - اضغط حفظ';};r.readAsDataURL(f);}
-function removeBg(){localStorage.removeItem('solano_bg_temp');localStorage.removeItem('solano_bg_final');document.getElementById('entrance').style.backgroundImage='';document.getElementById('bgStatus').innerText='تم الحذف';}
+function uploadBg(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=function(ev){localStorage.setItem('solano_bg_temp',ev.target.result);document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('${ev.target.result}')`;document.getElementById('bgStatus').innerText='✅ تم اختيار الصورة - اضغط حفظ';};r.readAsDataURL(f);}
+function removeBg(){localStorage.removeItem('solano_bg_temp');localStorage.removeItem('solano_bg_final');document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('entrance.jpg')`;document.getElementById('bgStatus').innerText='تم الحذف - رجعنا ل entrance.jpg';}
 function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_full_v2')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`}else if(k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>3 نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"><input id="a_${k}_d3" class="input" value="${data[k]?.deps[2]||''}"></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${arabicNames[s]}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
 function saveAll(){let data={};data.leaderTop=document.getElementById('a_leaderTop').value;data.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim());Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){let e=document.getElementById(`a_${k}_n`);if(e)data[k]={name:e.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value]}}else if(k.startsWith('team')){data[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value,document.getElementById(`a_${k}_d3`).value]};['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_full_v2',JSON.stringify(data));let bg=localStorage.getItem('solano_bg_temp');if(bg)localStorage.setItem('solano_bg_final',bg);alert('تم الحفظ ✅');location.reload();}
-(function(){let bg=localStorage.getItem('solano_bg_final')||localStorage.getItem('solano_bg_temp');if(bg)document.getElementById('entrance').style.backgroundImage=`url('${bg}')`;})();
+(function(){let bg=localStorage.getItem('solano_bg_final')||localStorage.getItem('solano_bg_temp');if(bg){document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('${bg}')`;}})();
 </script>
 </body>
 </html>
