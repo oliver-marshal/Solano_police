@@ -6,37 +6,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Cairo',sans-serif;background:#050a1f;color:#fff;overflow-x:hidden}
-.bg{position:fixed;inset:0;z-index:-4;background:radial-gradient(800px at 10% 0%,#1230a0aa,transparent),linear-gradient(#070b1e,#040612)}
-.news{position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#0a1a4a,#1a3a8a);color:#c9a86a;padding:5px 0;z-index:9998;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:2px;border-bottom:1px solid rgba(201,168,106,.3)}
+.bg{position:fixed;inset:0;z-index:-4;background:#050a1f}
+.news{position:fixed;top:0;left:0;right:0;background:linear-gradient(90deg,#0a1a4a,#1a3a8a);color:#c9a86a;padding:5px 0;z-index:9998;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:2px}
 .news span{display:inline-block;animation:ns 25s linear infinite}
 @keyframes ns{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
 .wrap{max-width:700px;margin:32px auto 20px;padding:14px}
-.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer;transition:.25s}
-.card:hover{border-color:#c9a86a;transform:translateY(-2px)}
+.card{background:linear-gradient(180deg,rgba(18,28,62,.92),rgba(10,16,34,.92));border:1px solid rgba(255,255,255,.1);border-radius:16px;margin-bottom:10px;cursor:pointer}
 .card-inner{padding:16px}
 .page{display:none}.back{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:8px 16px;border-radius:8px;margin-bottom:12px;cursor:pointer;font-weight:800}
 .input,textarea{width:100%;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px;color:#fff;margin-top:6px}
 .btn{width:100%;background:#2d6bff;border:none;border-radius:12px;padding:12px;color:#fff;font-weight:800;margin-top:10px;cursor:pointer}
 .btnGold{background:linear-gradient(90deg,#c9a86a,#8c6d3a);color:#000}
 .law-num{background:linear-gradient(135deg,#c9a86a,#8c6d3a);color:#000;font-weight:900;width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-left:8px;font-size:14px}
-.law-pun{background:rgba(255,42,42,.15);border:1px solid rgba(255,42,42,.3);color:#ff8a8a;padding:6px 10px;border-radius:8px;margin-top:10px;font-size:11px;line-height:1.6}
+.law-pun{background:rgba(255,42,42,.15);border:1px solid rgba(255,42,42,.3);color:#ff8a8a;padding:6px 10px;border-radius:8px;margin-top:10px;font-size:11px}
 
-/* تم التعديل هنا - الصورة كاملة بدون قص */
-#entrance{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:1.2s;background-color:#050a1f;background-image:linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('entrance.jpg');background-repeat:no-repeat;background-position:center center;background-size:contain}
-@media (min-width:769px){
-#entrance{background-size:cover;background-position:center center}
-}
-#entrance::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(5,10,31,.15),rgba(5,10,31,.75));z-index:1}
+/* دخولية متوازنة - الصورة تبين في الوسط */
+#entrance{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:60px 20px 30px;background-color:#070d2a;background-image:linear-gradient(rgba(5,10,31,.15),rgba(5,10,31,.6)),url('entrance.jpg');background-repeat:no-repeat;background-position:center center;background-size:contain;transition:1s}
+@media (min-width:769px){#entrance{background-size:cover}}
+#entrance::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,10,31,.4) 0%,rgba(5,10,31,0) 30%,rgba(5,10,31,0) 65%,rgba(5,10,31,.85) 100%);z-index:1}
 #entrance>*{position:relative;z-index:2}
-
-.badge{width:122px;height:122px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 55px rgba(201,168,106,.55);animation:fl 3s ease-in-out infinite}
-@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
-.badge b{font-size:50px;color:#000}.badge span{font-size:9px;letter-spacing:3px;color:#000;font-weight:900}
-.title{font-size:44px;font-weight:900;letter-spacing:5px;margin-top:16px;text-shadow:0 2px 10px #000}
-.sub{letter-spacing:7px;font-size:11px;color:#c9a86a}
-.line{width:270px;height:1px;background:linear-gradient(90deg,transparent,#c9a86a,transparent);margin:16px 0}
-.owner{font-size:11px;color:#8a94b3;text-align:center}
-.enterBtn{margin-top:22px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:14px 46px;border-radius:99px;color:#000;font-weight:900;letter-spacing:2px;cursor:pointer}
+.top-area{display:flex;flex-direction:column;align-items:center}
+.badge{width:92px;height:92px;background:linear-gradient(180deg,#c9a86a,#8c6d3a);border-radius:18px;display:flex;align-items:center;justify-content:center;flex-direction:column;box-shadow:0 0 30px rgba(201,168,106,.4)}
+.badge b{font-size:38px;color:#000}.badge span{font-size:7px;letter-spacing:2px;color:#000;font-weight:900}
+.middle-spacer{flex:1;min-height:40px}
+.bottom-area{display:flex;flex-direction:column;align-items:center;width:100%;max-width:400px}
+.title{font-size:38px;font-weight:900;letter-spacing:4px;text-shadow:0 2px 20px rgba(0,0,0,.8);line-height:1}
+.title2{font-size:38px;font-weight:900;letter-spacing:4px;text-shadow:0 2px 20px rgba(0,0,0,.8);line-height:1;margin-top:2px}
+.sub{letter-spacing:5px;font-size:10px;color:#c9a86a;margin-top:10px;text-shadow:0 1px 10px #000}
+.line{width:200px;height:1px;background:linear-gradient(90deg,transparent,#c9a86a,transparent);margin:12px 0}
+.owner{font-size:11px;color:#a0a8c0;text-align:center;line-height:1.6}
+.enterBtn{margin-top:16px;background:linear-gradient(90deg,#c9a86a,#8c6d3a);border:none;padding:13px 36px;border-radius:99px;color:#000;font-weight:900;letter-spacing:1px;cursor:pointer;box-shadow:0 0 20px rgba(201,168,106,.4);font-size:14px}
 .idCard{background:linear-gradient(135deg,#0e1e4a,#1c3a8a);border:1px solid rgba(201,168,106,.35);border-radius:14px;padding:12px;display:flex;gap:12px;align-items:center;margin-bottom:14px}
 .idAvatar{width:48px;height:48px;background:linear-gradient(135deg,#c9a86a,#8c6d3a);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900}
 .uploadLabel{background:rgba(201,168,106,.15);border:1px dashed #c9a86a;color:#c9a86a;padding:12px;border-radius:10px;display:block;text-align:center;cursor:pointer;margin-top:8px}
@@ -46,12 +45,18 @@
 <div class="bg"></div>
 <div class="news"><span>★ SOLANO POLICE DEPARTMENT • OLIVER MARSHAL • IT'S FEDERAL • ABO BANDAR • MRR SO • ★</span></div>
 <div id="entrance">
-<div class="badge"><b>★</b><span>POLICE</span><span style="font-size:7px">SOLANO</span></div>
-<div class="title">SOLANO POLICE</div>
-<div class="sub">DEPARTMENT • EST. 1921</div>
-<div class="line"></div>
-<div class="owner">OLIVER MARSHAL<br>SYSTEM OWNER</div>
-<button class="enterBtn" onclick="enterSite()">دخول النظام →</button>
+  <div class="top-area">
+    <div class="badge"><b>★</b><span>POLICE</span><span style="font-size:6px">SOLANO</span></div>
+  </div>
+  <div class="middle-spacer"></div>
+  <div class="bottom-area">
+    <div class="title">SOLANO</div>
+    <div class="title2">POLICE</div>
+    <div class="sub">DEPARTMENT • EST. 1921</div>
+    <div class="line"></div>
+    <div class="owner">OLIVER MARSHAL<br>SYSTEM OWNER</div>
+    <button class="enterBtn" onclick="enterSite()">دخول النظام →</button>
+  </div>
 </div>
 <div id="home"><div class="wrap">
 <div class="idCard"><div class="idAvatar">OM</div><div><div style="font-weight:900">OLIVER MARSHAL</div><div style="font-size:10px;opacity:.7">OWNER • ID: SP-32 • LEVEL 4</div></div></div>
@@ -104,11 +109,10 @@
 <div class="card"><div class="card-inner" style="background:rgba(201,168,106,.1);border:1px solid rgba(201,168,106,.3)">
 <b>🖼️ رفع صورة الخلفية</b>
 <input type="file" id="bgFile" style="display:none" accept="image/*" onchange="uploadBg(event)">
-<label for="bgFile" class="uploadLabel">📤 اضغط واختار صورة من جوالك</label>
-<div id="bgStatus" style="font-size:11px;margin-top:6px;opacity:.7">الصورة الحالية: entrance.jpg</div>
-<button class="btn" style="background:#ff3b3b;margin-top:8px" onclick="removeBg()">🗑️ حذف الخلفية المؤقتة</button>
+<label for="bgFile" class="uploadLabel">📤 اضغط واختار صورة</label>
+<div id="bgStatus" style="font-size:11px;margin-top:6px;opacity:.7">الحالية: entrance.jpg</div>
 </div></div>
-<div id="adminInputs"></div><button class="btn btnGold" onclick="saveAll()">💾 حفظ كل التعديلات</button></div></div>
+<div id="adminInputs"></div><button class="btn btnGold" onclick="saveAll()">💾 حفظ</button></div></div>
 <script>
 let stack=[],current='home';
 const arabicNames={qawanin:"📜 قوانين الفريق",taalimat:"📋 تعليمات الفريق",mutat:"📝 متطلبات الترقية",taraqi:"⭐ نظام الترقية",awqat:"⏰ الأوقات والتدريبات"};
@@ -147,10 +151,10 @@ special:{name:"قائد القوات الخاصة",deps:["الاسم","الاس�
 swat:{name:"قائد SWAT",deps:["الاسم","الاسم"]},
 pfs:{name:"قائد PFS",deps:["الاسم","الاسم"]},
 fto:{name:"قائد FTO",deps:["الاسم","الاسم"]},
-teamSpecial:{intro:"وحدة النخبة - المداهمات والعمليات الخطرة",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين القوات الخاصة",taalimat:"تعليمات القوات الخاصة",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات التدريب"},
-teamSwat:{intro:"وحدة التدخل السريع والاقتحام",leader:"قائد SWAT",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين SWAT",taalimat:"تعليمات SWAT",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"تدريبات SWAT"},
-teamFTO:{intro:"التدريب والتأهيل للمستجدين",leader:"قائد FTO",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين FTO",taalimat:"تعليمات FTO",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات FTO"},
-teamPFS:{intro:"حماية الشخصيات والمنشآت",leader:"قائد PFS",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين PFS",taalimat:"تعليمات PFS",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات PFS"},
+teamSpecial:{intro:"وحدة النخبة",leader:"قائد القوات الخاصة",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين القوات الخاصة",taalimat:"تعليمات القوات الخاصة",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات التدريب"},
+teamSwat:{intro:"وحدة التدخل السريع",leader:"قائد SWAT",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين SWAT",taalimat:"تعليمات SWAT",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"تدريبات SWAT"},
+teamFTO:{intro:"التدريب والتأهيل",leader:"قائد FTO",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين FTO",taalimat:"تعليمات FTO",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات FTO"},
+teamPFS:{intro:"حماية الشخصيات",leader:"قائد PFS",deps:["النائب الأول","النائب الثاني","النائب الثالث"],qawanin:"قوانين PFS",taalimat:"تعليمات PFS",mutat:"متطلبات الترقية",taraqi:"نظام الترقية",awqat:"أوقات PFS"},
 external:"الخارجية",vacation:"الإجازات",warnings:"التحذيرات",violations:"المخالفات"
 };
 function enterSite(){document.getElementById('entrance').style.opacity='0';setTimeout(()=>document.getElementById('entrance').style.display='none',800);}
@@ -163,37 +167,18 @@ if(id==='federal')document.getElementById('c-federal').innerHTML=(data.federal||
 if(defaults[id]?.name&&!id.startsWith('team')&&id!=='federal'&&id!=='leaderTop'){let o=data[id]||defaults[id];document.getElementById('t-'+id).innerText=o.name;document.getElementById('c-'+id).innerHTML=`<div class="card"><div class="card-inner" style="text-align:center;background:rgba(201,168,106,.15);border:1px solid rgba(201,168,106,.3)"><b style="color:#c9a86a">${o.name}</b></div></div>`+o.deps.map(d=>`<div class="card"><div class="card-inner">• ${d}</div></div>`).join('');}
 if(id.startsWith('team')){
 let o=data[id]||defaults[id];
-let html=`<div class="card"><div class="card-inner" style="background:linear-gradient(135deg,rgba(45,107,255,.15),rgba(18,28,62,.9));border:1px solid rgba(45,107,255,.3)">
-<div><b>📖 تعريف الفريق</b></div><div style="margin-top:8px;line-height:1.8">${o.intro}</div>
-<div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)">
-<b>👑 القائد: ${o.leader}</b>
-<div style="margin-top:10px"><div style="color:#c9a86a;font-weight:800;margin-bottom:4px">نواب القائد (3):</div>
-<div style="line-height:2">${o.deps.map((d,i)=>`▸ النائب ${i+1}: ${d}`).join('<br>')}</div></div>
-</div></div></div>`;
-['qawanin','taalimat','mutat','taraqi','awqat'].forEach(k=>{
-if(o[k]) html+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">${arabicNames[k]||k}</div></div>`;
-});
+let html=`<div class="card"><div class="card-inner" style="background:linear-gradient(135deg,rgba(45,107,255,.15),rgba(18,28,62,.9));border:1px solid rgba(45,107,255,.3)"><div><b>📖 تعريف</b></div><div style="margin-top:8px">${o.intro}</div><div style="margin-top:12px;border-top:1px solid rgba(255,255,255,.1);padding-top:12px"><b>👑 ${o.leader}</b><div style="margin-top:8px">${o.deps.map((d,i)=>`▸ النائب ${i+1}: ${d}`).join('<br>')}</div></div></div></div>`;
+['qawanin','taalimat','mutat','taraqi','awqat'].forEach(k=>{if(o[k]) html+=`<div class="card" onclick="openSub('${id}','${k}')"><div class="card-inner">${arabicNames[k]||k}</div></div>`;});
 document.getElementById('c-'+id).innerHTML=html;
 }
-if(id==='internal'){
-let html='';
-internalLaws.forEach((law,i)=>{
-html+=`<div class="card"><div class="card-inner">
-<div><span class="law-num">${i+1}</span><b>${law.title}</b></div>
-<div style="margin-top:8px;line-height:1.8;opacity:.9">${law.text}</div>
-<div class="law-pun">⚖️ ${law.pun}</div>
-</div></div>`;
-});
-document.getElementById('c-internal').innerHTML=html;
-}
+if(id==='internal'){let html='';internalLaws.forEach((law,i)=>{html+=`<div class="card"><div class="card-inner"><div><span class="law-num">${i+1}</span><b>${law.title}</b></div><div style="margin-top:8px;opacity:.9">${law.text}</div><div class="law-pun">⚖️ ${law.pun}</div></div></div>`;});document.getElementById('c-internal').innerHTML=html;}
 if(['external','vacation','warnings','violations'].includes(id))document.getElementById('c-'+id).innerText=data[id]||defaults[id];
 }
 function openSub(team,k){stack.push(current);current='subPage';let d=JSON.parse(localStorage.getItem('solano_full_v2')||'null')||defaults;document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('subPage').style.display='block';document.getElementById('subTitle').innerText=arabicNames[k]||k;document.getElementById('subText').innerText=d[team][k]||defaults[team][k];}
-function uploadBg(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=function(ev){localStorage.setItem('solano_bg_temp',ev.target.result);document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('${ev.target.result}')`;document.getElementById('bgStatus').innerText='✅ تم اختيار الصورة - اضغط حفظ';};r.readAsDataURL(f);}
-function removeBg(){localStorage.removeItem('solano_bg_temp');localStorage.removeItem('solano_bg_final');document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('entrance.jpg')`;document.getElementById('bgStatus').innerText='تم الحذف - رجعنا ل entrance.jpg';}
-function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_full_v2')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`}else if(k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k} تعريف</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>3 نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"><input id="a_${k}_d3" class="input" value="${data[k]?.deps[2]||''}"></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${arabicNames[s]}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
+function uploadBg(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=function(ev){localStorage.setItem('solano_bg_temp',ev.target.result);document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.15),rgba(5,10,31,.6)),url('${ev.target.result}')`;document.getElementById('bgStatus').innerText='✅ تم اختيار الصورة - احفظ';};r.readAsDataURL(f);}
+function openAdmin(){let p=prompt('كلمة السر:');if(btoa(p)!='T0xJVkVSMjAyNg=='){if(p!==null)alert('خطأ');return}nav('admin');let data=JSON.parse(localStorage.getItem('solano_full_v2')||'null')||defaults;let cont=document.getElementById('adminInputs');cont.innerHTML='';cont.innerHTML+=`<div class="card"><div class="card-inner"><b>القائد</b><input id="a_leaderTop" class="input" value="${data.leaderTop||''}"></div></div>`;cont.innerHTML+=`<div class="card"><div class="card-inner"><b>النواب الفيدراليون (فاصلة)</b><input id="a_federal" class="input" value="${(data.federal||defaults.federal).join(',')}"></div></div>`;Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><input id="a_${k}_n" class="input" value="${data[k]?.name||defaults[k].name}"><input id="a_${k}_1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_2" class="input" value="${data[k]?.deps[1]||''}"></div></div>`}else if(k.startsWith('team')){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}_intro" class="input">${data[k]?.intro||defaults[k].intro}</textarea><b>قائد</b><input id="a_${k}_leader" class="input" value="${data[k]?.leader||defaults[k].leader}"><b>3 نواب</b><input id="a_${k}_d1" class="input" value="${data[k]?.deps[0]||''}"><input id="a_${k}_d2" class="input" value="${data[k]?.deps[1]||''}"><input id="a_${k}_d3" class="input" value="${data[k]?.deps[2]||''}"></div></div>`;['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}-${arabicNames[s]}</b><textarea id="a_${k}_${s}" class="input">${data[k]?.[s]||defaults[k][s]}</textarea></div></div>`})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){cont.innerHTML+=`<div class="card"><div class="card-inner"><b>${k}</b><textarea id="a_${k}" class="input">${data[k]||defaults[k]}</textarea></div></div>`}})}
 function saveAll(){let data={};data.leaderTop=document.getElementById('a_leaderTop').value;data.federal=document.getElementById('a_federal').value.split(',').map(s=>s.trim());Object.keys(defaults).forEach(k=>{if(defaults[k].name&&k!=='federal'&&k!=='leaderTop'){let e=document.getElementById(`a_${k}_n`);if(e)data[k]={name:e.value,deps:[document.getElementById(`a_${k}_1`).value,document.getElementById(`a_${k}_2`).value]}}else if(k.startsWith('team')){data[k]={intro:document.getElementById(`a_${k}_intro`).value,leader:document.getElementById(`a_${k}_leader`).value,deps:[document.getElementById(`a_${k}_d1`).value,document.getElementById(`a_${k}_d2`).value,document.getElementById(`a_${k}_d3`).value]};['qawanin','taalimat','mutat','taraqi','awqat'].forEach(s=>{let el=document.getElementById(`a_${k}_${s}`);if(el)data[k][s]=el.value})}else if(typeof defaults[k]==='string'&&k!=='leaderTop'){let el=document.getElementById(`a_${k}`);if(el)data[k]=el.value}});localStorage.setItem('solano_full_v2',JSON.stringify(data));let bg=localStorage.getItem('solano_bg_temp');if(bg)localStorage.setItem('solano_bg_final',bg);alert('تم الحفظ ✅');location.reload();}
-(function(){let bg=localStorage.getItem('solano_bg_final')||localStorage.getItem('solano_bg_temp');if(bg){document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.25),rgba(5,10,31,.85)),url('${bg}')`;}})();
+(function(){let bg=localStorage.getItem('solano_bg_final')||localStorage.getItem('solano_bg_temp');if(bg){document.getElementById('entrance').style.backgroundImage=`linear-gradient(rgba(5,10,31,.15),rgba(5,10,31,.6)),url('${bg}')`;}})();
 </script>
 </body>
 </html>
